@@ -12,8 +12,8 @@
     <style>
         :root {
             --primary-color: #005d6a; /* الزيتي الغامق من الصورة */
-            --accent-color: #45f5a1;  /* الأخضر الفاتح للزر */
-            --light-bg: #bdf6dd;     /* لون البطاقة السفلي */
+            --accent-color: #45f5a1; /* الأخضر الفاتح للزر */
+            --light-bg: #bdf6dd; /* لون البطاقة السفلي */
             --white: #ffffff;
         }
 
@@ -29,95 +29,683 @@
             background-color: var(--primary-color);
             color: var(--white);
             padding-bottom: 120px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .navbar-brand img { height: 50px; }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(0, 93, 106, 0.3) 0%, rgba(0, 93, 106, 0.7) 100%);
+            z-index: 0;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
         .nav-link {
             color: var(--white) !important;
             font-weight: 600;
             margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
         }
-        .nav-link:hover { color: var(--accent-color) !important; }
+
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
 
         /* --- قسم الهيرو --- */
-        .hero-content { padding: 80px 0; text-align: center; }
-        .hero-title { font-size: 4.5rem; font-weight: 900; margin-bottom: 0; }
-        .hero-subtitle { font-size: 3rem; font-weight: 700; margin-bottom: 25px; }
-        .hero-text { font-size: 1.3rem; max-width: 800px; margin: 0 auto 40px; line-height: 1.8; opacity: 0.9; }
+        .hero-content {
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 0;
+        }
+
+        .hero-subtitle {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .hero-text {
+            font-size: 1.3rem;
+            max-width: 450px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
 
         .btn-register {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            border: none;
-            padding: 12px 60px;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 1.2rem;
-            transition: 0.3s;
+            background-color: var(--accent-color) !important;
+            color: var(--primary-color) !important;
+            border: none !important;
+            padding: 12px 30px !important;
+            border-radius: 50px !important;
+            font-weight: 800 !important;
+            font-size: 1rem !important;
+            transition: 0.3s !important;
+            box-shadow: 0 4px 15px rgba(69, 245, 161, 0.4) !important;
         }
-        .btn-register:hover { background-color: white; transform: scale(1.05); }
 
-        /* --- بطاقة المواعيد (المتداخلة) --- */
-        .timeline-card {
-            background-color: var(--light-bg);
-            border-radius: 30px;
-            padding: 40px 20px;
-            margin-top: -80px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        .btn-register:hover {
+            background-color: white;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(69, 245, 161, 0.6);
         }
-        .stat-item { text-align: center; border-left: 1px solid rgba(0,93,106,0.1); }
-        .stat-item:last-child { border-left: none; }
-        .stat-date { display: block; font-size: 1.8rem; font-weight: 900; }
-        .stat-label { font-size: 1.1rem; font-weight: 600; }
+
+        .stat-item {
+            text-align: center;
+            border-left: 1px solid rgba(0, 93, 106, 0.1);
+        }
+
+        .stat-item:last-child {
+            border-left: none;
+        }
+
+        .stat-date {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 900;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
 
         /* --- الأقسام العامة --- */
-        section { padding: 80px 0; }
-        .section-title { font-weight: 800; margin-bottom: 40px; text-align: center; position: relative; }
-        .section-title::after {
-            content: ""; width: 50px; height: 4px; background: var(--accent-color);
-            position: absolute; bottom: -10px; right: 50%; transform: translateX(50%);
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-weight: 800;
+            position: relative;
+            font-size: 2.5rem;
+        }
+
+        /* --- قسم المميزات --- */
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border-top: 5px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-color), #2de98c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .feature-text {
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* --- قسم الجوائز --- */
+        .prizes-section {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #e8f8f2 100%);
+        }
+
+        .prize-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prize-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-color), #2de98c);
+        }
+
+        .prize-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .prize-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .prize-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .prize-amount {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin: 15px 0;
+        }
+
+        .prize-description {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* --- قسم المتحدثين --- */
+        .speakers-section {
+            background-color: #f8f9fa;
+        }
+
+        .speaker-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .speaker-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary-color), #003d45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+
+        .speaker-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .speaker-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .speaker-title {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .speaker-bio {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .speaker-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* --- قسم الشراكات --- */
+        .partners-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #003d45 100%);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .partner-logo {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
         }
 
         /* --- الجدول الزمني (الخطوات) --- */
         .step-box {
-            background: white; border-radius: 20px; padding: 30px;
-            text-align: center; border: 1px solid #eee; transition: 0.3s;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: 0.3s;
+            height: 100%;
         }
-        .step-box:hover { border-color: var(--accent-color); transform: translateY(-5px); }
+
+        .step-box:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
         .step-number {
-            width: 50px; height: 50px; background: var(--primary-color); color: white;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 20px; font-weight: bold;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .step-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .step-text {
+            color: #666;
+            line-height: 1.7;
         }
 
         /* --- الأسئلة الشائعة --- */
-        .accordion-button:not(.collapsed) {
-            background-color: var(--light-bg); color: var(--primary-color);
+        .accordion-button {
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
-        footer { background: var(--primary-color); color: white; padding: 40px 0; }
+        .accordion-button:not(.collapsed) {
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23005d6a'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23005d6a'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        /* --- قسم التسجيل --- */
+        .register-section {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #e8f8f2 100%);
+        }
+
+        .register-container {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(69, 245, 161, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* --- التذييل --- */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px 0 30px;
+            position: relative;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-right: 10px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .footer-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+
+        }
+            .footer-bottom p{color: white !important;}
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* --- زر العودة للأعلى --- */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(69, 245, 161, 0.4);
+            z-index: 1000;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(69, 245, 161, 0.6);
+        }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.8rem; }
-            .hero-subtitle { font-size: 2rem; }
-            .stat-item { border-left: none; border-bottom: 1px solid rgba(0,93,106,0.1); padding: 15px 0; }
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 2rem;
+            }
+
+            .stat-item {
+                border-left: none;
+                border-bottom: 1px solid rgba(0, 93, 106, 0.1);
+                padding: 15px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .register-container {
+                padding: 25px;
+            }
+
+            .footer-col {
+                margin-bottom: 30px;
+            }
         }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.6rem;
+            }
+
+            .stat-date {
+                font-size: 1.4rem;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+            }
+
+            .btn-register {
+                padding: 10px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <style>
+        .navbar-brand {
+            width: 260px
+        }
+
+        .navbar-brand img {
+            width: 100% !important;
+            height: auto
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 700
+        }
+        .about{
+            background-color: #6f73b80d;
+            margin-top: -70px;
+            padding-top: 180px;
+        }
+        .about h4{color:#614e8f}
+        .about p{    color: #606060;
+            font-size: 20px;}
+        .badge_section{
+            background: #005d6a;
+            color: white;
+            padding: 30px 45px !important;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-top: -50px;
+        }
+
+        .accordion-button,
+        .accordion-button:focus,
+        .accordion-button:not(.collapsed) {
+            background: #00ce7c3d !important; /* نفس اللون الأساسي */
+            color: #007580 !important;         /* نفس لون النص */
+            font-weight: 800 !important;
+            padding: 24px 15px !important;
+            box-shadow: none !important;        /* يلغي ظل focus الافتراضي */
+        }
+
+        .accordion-item{
+            margin: 10px 0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .accordion-body {
+            background-color: #80808021;}
+
     </style>
 </head>
 <body>
 
+<!-- زر العودة للأعلى -->
+<a href="#" class="scroll-to-top">
+    <i class="bi bi-arrow-up"></i>
+</a>
+
+<!-- الهيدر -->
 <header class="hero-section">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="https://via.placeholder.com/150x50/005d6a/ffffff?text=THKA-THON" alt="Logo">
+                    <img src="./img/logo.png" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav m-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">عن الهاكاثون</a></li>
                         <li class="nav-item"><a class="nav-link" href="#schedule">الجدول الزمني</a></li>
                         <li class="nav-item"><a class="nav-link" href="#faq">الأسئلة الشائعة</a></li>
@@ -138,6 +726,7 @@
     </div>
 </header>
 
+<!-- قسم المواعيد -->
 <div class="container">
     <div class="timeline-card">
         <div class="row g-0">
@@ -161,61 +750,679 @@
     </div>
 </div>
 
-<section id="about" class="container">
-    <h2 class="section-title">عن الهاكاثون</h2>
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <p class="lead">ذكاء ثون هو تجمع للمبدعين والمبرمجين والمصممين لتطوير حلول مبتكرة باستخدام تقنيات الذكاء الاصطناعي.</p>
-            <ul>
-                <li>دعم المشاريع الناشئة في مجال الـ AI.</li>
-                <li>توفير بيئة تنافسية بين العقول الشابة.</li>
-                <li>ورش عمل وجلسات إرشادية مع خبراء.</li>
-            </ul>
+<!-- قسم عن الهاكاثون -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="title mb-5">
+            <h2 class="section-title">معلومات الهاكاثون</h2>
+            <p>كل ما تحتاجين معرفته عن ذكاء ثون</p>
         </div>
-        <div class="col-md-6 text-center">
-            <i class="bi bi-cpu" style="font-size: 150px; color: var(--light-bg);"></i>
+        <div class="row g-4 align-items-start">
+            <div class="col-md-6 col-lg-4 mb-5">
+                <h4 class="fw-bold">الهدف :</h4>
+                <p>بنــاء حلــول ذكيــة باســتخدام الــذكاء الاصطناعـي لتحديـات واقعيـة وتحويـل الأفكار إلى نماذج قابلة
+                    للتطبيق</p>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <h4 class="fw-bold">المدة الزمنية :</h4>
+                <p>مـن 10 مـارس 2026 إلى 20 مايو 2026 (71 يوم)</p>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <h4 class="fw-bold">الجهات المنظمة :</h4>
+                <p>مركـز الـذكاء الاصطناعـي بجامعـة الأمــيرة نــورة بنــت عبدالرحمــن بالتعاون مع شركة علم</p>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <h4 class="fw-bold">الحضور :</h4>
+                <p>هجــين: حضــوري فــي جامعــة الأمــيرة نورة (قاعات المؤتمرات) + عن بعد</p>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <h4 class="fw-bold">الفئة المستهدفة :</h4>
+                <p>طالبــات وخريجــات جامعــة الأمــيرة نــورة مــن جميــع التخصصات والكليات</p>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <h4 class="fw-bold">المهارات المطلوبة :</h4>
+                <p>لا يشــترط خلفيــة تقنيــة - ســنوفر ورش عمــل تدريبيــة شــاملة فــي الابتكار والذكاء الاصطناعي</p>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="schedule" class="bg-light">
+
+<div class="container badge_section" >
+    <h2>شروط المشاركة</h2>
+</div>
+
+<section class="about">
     <div class="container">
-        <h2 class="section-title">الجدول الزمني</h2>
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="step-box">
-                    <div class="step-number">1</div>
-                    <h5>التسجيل الفرز</h5>
-                    <p class="small text-muted">مرحلة استقبال الطلبات واختيار المشاركين.</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="step-box">
-                    <div class="step-number">2</div>
-                    <h5>اللقاءات التعريفية</h5>
-                    <p class="small text-muted">شرح المسارات والقوانين والفرق.</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="step-box">
-                    <div class="step-number">3</div>
-                    <h5>مرحلة البناء</h5>
-                    <p class="small text-muted">العمل المكثف على النماذج الأولية.</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="step-box">
-                    <div class="step-number">4</div>
-                    <h5>التحكيم والختام</h5>
-                    <p class="small text-muted">عرض المشاريع وتتويج الفائزين.</p>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
+
+<!-- Bootstrap RTL -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+<!-- Cairo font -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --bg: #efeff8;
+        --hero-green: #0b6f74;
+        --accent: #00c37a;
+        --path: #6f73b8;
+        --card: #ffffff;
+        --muted: #5b6b7a;
+    }
+
+    body {
+        font-family: "Cairo", sans-serif;
+        margin: 0;
+        color: #1d2330;
+    }
+
+    /* Section wrapper */
+    .timeline-section {
+        padding: 60px 16px 90px;
+    }
+
+    /* Header box (matches الصورة) */
+    .timeline-header {
+        max-width: 860px;
+        margin: 0 auto 48px;
+        background: var(--hero-green);
+        color: #fff;
+        padding: 26px 32px;
+        border-radius: 14px;
+        text-align: right;
+        box-shadow: 0 8px 24px rgba(6, 44, 44, 0.08);
+    }
+
+    .timeline-header h2 {
+        font-weight: 900;
+        margin: 0 0 6px;
+        font-size: 1.35rem;
+    }
+
+    .timeline-header p {
+        margin: 0;
+        opacity: 0.92;
+        font-weight: 600;
+    }
+
+    /* container for svg background */
+    .timeline-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 8px 0;
+    }
+
+    /* SVG decorative path (only visible on large screens) */
+    .timeline-svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .timeline-svg path {
+        fill: none;
+        stroke: var(--path);
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.95;
+    }
+
+    /* Grid items (cards) */
+    .timeline-grid {
+        position: relative;
+        z-index: 2; /* above svg */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 66px 26px;
+    }
+
+    /* card style */
+    .timeline-section .timeline-card {
+        background: none
+    }
+
+    .timeline-card .date {
+        display: block;
+        color: var(--accent);
+        font-weight: 800;
+        margin-bottom: 6px;
+        font-size: 0.92rem;
+    }
+
+    .timeline-card h4 {
+        margin: 0 0 6px;
+        font-size: 1.02rem;
+        font-weight: 800;
+        color: #163046;
+    }
+
+    .timeline-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.35;
+    }
+
+    /* decorative dot that appears next to card when svg visible */
+    .timeline-dot {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--path);
+        z-index: 1;
+        transform: translate(50%, -50%);
+        box-shadow: 0 4px 10px rgba(111, 115, 184, 0.22);
+    }
+
+    /* ========== Responsive grid breakpoints ========== */
+    /* medium (2 columns) */
+    @media (max-width: 991.98px) {
+        .timeline-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* small (1 column) */
+    @media (max-width: 767.98px) {
+        .timeline-grid {
+            grid-template-columns: 1fr;
+        }
+
+        /* hide the svg and decorative dots on small screens */
+        .timeline-svg,
+        .timeline-dot {
+            display: none;
+        }
+
+        /* show a right-line and small circle before each card for mobile vertical timeline feel */
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 24px;
+            width: 12px;
+            height: 12px;
+            background: var(--path);
+            border-radius: 50%;
+        }
+
+        .timeline-container {
+            padding-top: 20px;
+        }
+    }
+
+    /* small adjustments */
+    @media (max-width: 1200px) {
+        .timeline-header {
+            max-width: 720px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .timeline-header {
+            padding: 18px;
+            border-radius: 12px;
+            text-align: right;
+        }
+
+        .timeline-header h2 {
+            font-size: 1.15rem;
+        }
+    }
+
+    /* ========== positions for dots to visually align with svg path on lg >=992px ==========
+       We place the dots absolute inside .timeline-container.
+       You can tweak top/right percentages to match exact design.
+    ========== */
+    @media (min-width: 992px) {
+        /* ensure container has enough height for svg curve */
+        .timeline-container {
+            height: 720px;
+        }
+
+        /* place 10 dots; their values tuned to match a 3-row curved path */
+        .dot-1 {
+            top: 70px;
+            right: 60px;
+        }
+
+        .dot-2 {
+            top: 70px;
+            right: 320px;
+        }
+
+        .dot-3 {
+            top: 70px;
+            right: 600px;
+        }
+
+        .dot-4 {
+            top: 230px;
+            right: 600px;
+        }
+
+        .dot-5 {
+            top: 230px;
+            right: 330px;
+        }
+
+        .dot-6 {
+            top: 230px;
+            right: 60px;
+        }
+
+        .dot-7 {
+            top: 390px;
+            right: 60px;
+        }
+
+        .dot-8 {
+            top: 390px;
+            right: 330px;
+        }
+
+        .dot-9 {
+            top: 390px;
+            right: 600px;
+        }
+
+        .dot-10 {
+            top: 650px;
+            right: 600px;
+        }
+    }
+
+    /* small visual polish */
+    .timeline-card:hover {
+        transform: translateY(-4px);
+        transition: transform .25s ease;
+        box-shadow: 0 16px 30px rgba(16, 30, 59, 0.08);
+    }
+
+    .timeline-card {
+        background-color: var(--light-bg);
+        border-radius: 30px;
+        padding: 40px 20px;
+        margin-top: -80px;
+        position: relative;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        z-index: 20 !important;
+    }
+</style>
+
+<section class="timeline-section">
+    <!-- header -->
+    <div class="timeline-header">
+        <h2>الجدول الزمني</h2>
+        <p>جميع المراحل والمواعيد المهمة</p>
+    </div>
+
+    <div class="timeline-container">
+
+        <!-- SVG decorative path (hidden on small screens via CSS) -->
+        <svg
+                class="timeline-svg"
+                viewBox="0 0 1200 2300"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    d="
+      M 1090 100
+      H 110
+      C 40 100, 40 650, 110 650
+      H 1070
+      C 1140 650, 1140 1200, 1070 1200
+      H 110
+      C 40 1160, 40 1650
+    "
+            />
+        </svg>
+
+
+        <!-- decorative dots (positioned absolute above) -->
+        <span class="timeline-dot dot-1"></span>
+        <span class="timeline-dot dot-2"></span>
+        <span class="timeline-dot dot-3"></span>
+        <span class="timeline-dot dot-4"></span>
+        <span class="timeline-dot dot-5"></span>
+        <span class="timeline-dot dot-6"></span>
+        <span class="timeline-dot dot-7"></span>
+        <span class="timeline-dot dot-8"></span>
+        <span class="timeline-dot dot-9"></span>
+        <span class="timeline-dot dot-10"></span>
+
+        <!-- GRID: 3 cols (lg) - 2 cols (md) - 1 col (sm) -->
+        <div class="timeline-grid">
+
+            <!-- item 1 -->
+            <div class="timeline-card">
+                <span class="date">10 مارس 2026</span>
+                <h4>فتح باب التسجيل</h4>
+                <p>بداية استقبال طلبات التسجيل من المشاركين.</p>
+            </div>
+
+            <!-- item 2 -->
+            <div class="timeline-card">
+                <span class="date">25 مارس 2026</span>
+                <h4>إغلاق التسجيل</h4>
+                <p>آخر موعد لتقديم طلبات المشاركة.</p>
+            </div>
+
+            <!-- item 3 -->
+            <div class="timeline-card">
+                <span class="date">5 أبريل 2026</span>
+                <h4>بدء الفرز الأولي</h4>
+                <p>فرز الطلبات واختيار المشاركات المناسبة.</p>
+            </div>
+
+            <!-- item 4 -->
+            <div class="timeline-card">
+                <span class="date">20 أبريل 2026</span>
+                <h4>انطلاق الهاكاثون</h4>
+                <p>حفل الافتتاح وبدء العمل على التحديات.</p>
+            </div>
+
+            <!-- item 5 -->
+            <div class="timeline-card">
+                <span class="date">21–24 أبريل 2026</span>
+                <h4>المرحلة الأولى: تطوير الأفكار</h4>
+                <p>فترة العمل على نماذج تطوير الأفكار والنماذج الأولية.</p>
+            </div>
+
+            <!-- item 6 -->
+            <div class="timeline-card">
+                <span class="date">27 أبريل 2026</span>
+                <h4>إعلان نتائج الفرز الأول</h4>
+                <p>الإعلان عن الفرق المتأهلة للمرحلة التالية.</p>
+            </div>
+
+            <!-- item 7 -->
+            <div class="timeline-card">
+                <span class="date">29–30 أبريل 2026</span>
+                <h4>ورش العمل المتقدمة</h4>
+                <p>ورش إرشادية ودعم فني للفرق المتأهلة.</p>
+            </div>
+
+            <!-- item 8 -->
+            <div class="timeline-card">
+                <span class="date">1–8 مايو 2026</span>
+                <h4>المرحلة الثانية: النماذج الأولية</h4>
+                <p>تطوير النماذج الأولية وتجهيز العروض النهائية.</p>
+            </div>
+
+            <!-- item 9 -->
+            <div class="timeline-card">
+                <span class="date">10 مايو 2026</span>
+                <h4>التحكيم النهائي</h4>
+                <p>تقييم المشاريع من قبل لجنة التحكيم المتخصصة.</p>
+            </div>
+
+            <!-- item 10 -->
+            <div class="timeline-card">
+                <span class="date">20 مايو 2026</span>
+                <h4>إعلان النتائج والفائزين</h4>
+                <p>حفل الختام وتكريم الفرق الفائزة.</p>
+            </div>
+
+        </div> <!-- .timeline-grid -->
+
+    </div> <!-- .timeline-container -->
+</section>
+
+
+<!--<style>-->
+<!--    .timeline-wrap{-->
+<!--        background:#efeff8;-->
+<!--        padding:90px 0;-->
+<!--        direction:rtl;-->
+<!--        font-family:'Cairo',sans-serif;-->
+<!--    }-->
+
+<!--    .timeline-title{-->
+<!--        background:#0b6f74;-->
+<!--        color:#fff;-->
+<!--        padding:35px 45px;-->
+<!--        border-radius:22px;-->
+<!--        max-width:720px;-->
+<!--        margin:0 auto 80px;-->
+<!--    }-->
+
+<!--    .timeline-title h2{-->
+<!--        font-weight:900;-->
+<!--        margin-bottom:4px;-->
+<!--    }-->
+
+<!--    .timeline-area{-->
+<!--        position:relative;-->
+<!--        max-width:1200px;-->
+<!--        margin:auto;-->
+<!--        height:900px;-->
+<!--    }-->
+
+<!--    .timeline-svg{-->
+<!--        position:absolute;-->
+<!--        inset:0;-->
+<!--    }-->
+
+<!--    .timeline-svg path{-->
+<!--        fill:none;-->
+<!--        stroke:#6f73b8;-->
+<!--        stroke-width:4;-->
+<!--        stroke-linecap:round;-->
+<!--    }-->
+
+<!--    /* Points */-->
+<!--    .point{-->
+<!--        position:absolute;-->
+<!--        width:14px;-->
+<!--        height:14px;-->
+<!--        background:#6f73b8;-->
+<!--        border-radius:50%;-->
+<!--    }-->
+
+<!--    /* Items */-->
+<!--    .item{-->
+<!--        position:absolute;-->
+<!--        width:260px;-->
+<!--        text-align:right;-->
+<!--    }-->
+
+<!--    .item h4{-->
+<!--        font-weight:800;-->
+<!--        margin:4px 0;-->
+<!--        color:#1b2d5c;-->
+<!--    }-->
+
+<!--    .item p{-->
+<!--        margin:0;-->
+<!--        font-size:.9rem;-->
+<!--        color:#555;-->
+<!--    }-->
+
+<!--    .date{-->
+<!--        color:#00c37a;-->
+<!--        font-weight:800;-->
+<!--        font-size:.85rem;-->
+<!--    }-->
+
+<!--    /* ===== POSITIONS (مطابقة للصورة) ===== */-->
+
+<!--    /* ROW 1 */-->
+<!--    .p1{ top:90px; right:70px;}-->
+<!--    .i1{ top:40px; right:0;}-->
+
+<!--    .p2{ top:90px; right:360px;}-->
+<!--    .i2{ top:40px; right:290px;}-->
+
+<!--    .p3{ top:90px; right:650px;}-->
+<!--    .i3{ top:40px; right:580px;}-->
+
+<!--    /* ROW 2 */-->
+<!--    .p4{ top:240px; right:650px;}-->
+<!--    .i4{ top:260px; right:580px;}-->
+
+<!--    .p5{ top:240px; right:360px;}-->
+<!--    .i5{ top:260px; right:290px;}-->
+
+<!--    .p6{ top:240px; right:70px;}-->
+<!--    .i6{ top:260px; right:0;}-->
+
+<!--    /* ROW 3 */-->
+<!--    .p7{ top:390px; right:70px;}-->
+<!--    .i7{ top:410px; right:0;}-->
+
+<!--    .p8{ top:390px; right:360px;}-->
+<!--    .i8{ top:410px; right:290px;}-->
+
+<!--    .p9{ top:390px; right:650px;}-->
+<!--    .i9{ top:410px; right:580px;}-->
+
+<!--    /* LAST */-->
+<!--    .p10{ top:690px; right:650px;}-->
+<!--    .i10{ top:720px; right:580px;}-->
+
+<!--    /* Responsive */-->
+<!--    @media(max-width:992px){-->
+<!--        .timeline-area{height:auto}-->
+<!--        .timeline-svg{display:none}-->
+<!--        .point{display:none}-->
+<!--        .item{-->
+<!--            position:static;-->
+<!--            width:100%;-->
+<!--            margin-bottom:25px;-->
+<!--        }-->
+<!--    }-->
+
+<!--</style>-->
+
+<!--<section class="timeline-wrap">-->
+<!--    <div class="container">-->
+
+<!--        &lt;!&ndash; Header &ndash;&gt;-->
+<!--        <div class="timeline-title">-->
+<!--            <h2>الجدول الزمني</h2>-->
+<!--            <p>جميع المراحل والمواعيد المهمة</p>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Timeline Area &ndash;&gt;-->
+<!--        <div class="timeline-area">-->
+
+<!--            &lt;!&ndash; SVG PATH &ndash;&gt;-->
+<!--            <svg viewBox="0 0 1200 900" class="timeline-svg" preserveAspectRatio="none">-->
+<!--                <path d="-->
+<!--          M 100 100-->
+<!--          H 1050-->
+<!--          C 1120 100, 1120 250, 1050 250-->
+<!--          H 150-->
+<!--          C 80 250, 80 400, 150 400-->
+<!--          H 1050-->
+<!--          C 1120 400, 1120 550, 1050 550-->
+<!--          H 150-->
+<!--          C 80 550, 80 700, 150 700-->
+<!--          H 1050-->
+<!--        " />-->
+<!--            </svg>-->
+
+<!--            &lt;!&ndash; POINTS &ndash;&gt;-->
+<!--            <span class="point p1"></span>-->
+<!--            <span class="point p2"></span>-->
+<!--            <span class="point p3"></span>-->
+<!--            <span class="point p4"></span>-->
+<!--            <span class="point p5"></span>-->
+<!--            <span class="point p6"></span>-->
+<!--            <span class="point p7"></span>-->
+<!--            <span class="point p8"></span>-->
+<!--            <span class="point p9"></span>-->
+<!--            <span class="point p10"></span>-->
+
+<!--            &lt;!&ndash; ITEMS &ndash;&gt;-->
+<!--            <div class="item i1">-->
+<!--                <span class="date">10 مارس 2026</span>-->
+<!--                <h4>فتح باب التسجيل</h4>-->
+<!--                <p>بدء استقبال طلبات التسجيل</p>-->
+<!--            </div>-->
+
+<!--            <div class="item i2">-->
+<!--                <span class="date">25 مارس 2026</span>-->
+<!--                <h4>إغلاق التسجيل</h4>-->
+<!--                <p>آخر موعد للتقديم</p>-->
+<!--            </div>-->
+
+<!--            <div class="item i3">-->
+<!--                <span class="date">5 أبريل 2026</span>-->
+<!--                <h4>بدء الفرز الأولي</h4>-->
+<!--                <p>فرز واختيار المشاركات</p>-->
+<!--            </div>-->
+
+<!--            <div class="item i4">-->
+<!--                <span class="date">20 أبريل 2026</span>-->
+<!--                <h4>انطلاق الهاكاثون</h4>-->
+<!--                <p>بدء التحديات</p>-->
+<!--            </div>-->
+
+<!--            <div class="item i5">-->
+<!--                <span class="date">21–24 أبريل 2026</span>-->
+<!--                <h4>المرحلة الأولى</h4>-->
+<!--                <p>تطوير الأفكار</p>-->
+<!--            </div>-->
+
+<!--            <div class="item i6">-->
+<!--                <span class="date">27 أبريل 2026</span>-->
+<!--                <h4>نتائج الفرز الأول</h4>-->
+<!--                <p>الإعلان عن المتأهلين</p>-->
+<!--            </div>-->
+
+<!--            <div class="item i7">-->
+<!--                <span class="date">29–30 أبريل 2026</span>-->
+<!--                <h4>ورش العمل المتقدمة</h4>-->
+<!--                <p>جلسات إرشاد</p>-->
+<!--            </div>-->
+
+<!--            <div class="item i8">-->
+<!--                <span class="date">1–8 مايو 2026</span>-->
+<!--                <h4>المرحلة الثانية</h4>-->
+<!--                <p>النماذج الأولية</p>-->
+<!--            </div>-->
+
+<!--            <div class="item i9">-->
+<!--                <span class="date">10 مايو 2026</span>-->
+<!--                <h4>التحكيم النهائي</h4>-->
+<!--                <p>تقييم المشاريع</p>-->
+<!--            </div>-->
+
+<!--            <div class="item i10">-->
+<!--                <span class="date">20 مايو 2026</span>-->
+<!--                <h4>إعلان النتائج</h4>-->
+<!--                <p>تكريم الفائزين</p>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!-- قسم الأسئلة الشائعة -->
+
+<div class="container badge_section" >
+    <h2>الأسئلة الشائعة</h2>
+    <p style="    color: #c0ffe6 !important;
+    font-weight: 200;
+    font-size: 18px;">إجاباتٌ للأسئلة الأكثر تكرارًا</p>
+</div>
 
 <section id="faq" class="container">
-    <h2 class="section-title">الأسئلة الشائعة</h2>
     <div class="accordion" id="faqAccordion">
         <div class="accordion-item">
             <h2 class="accordion-header">
@@ -224,7 +1431,10 @@
                 </button>
             </h2>
             <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">جميع المبدعين من مبرمجين، مصممين، ومحللي بيانات سواء كانوا طلاباً أو محترفين.</div>
+                <div class="accordion-body">
+                    يمكن للمبدعين من مختلف التخصصات المشاركة، بما في ذلك المبرمجين، المصممين، محللي البيانات، ورواد
+                    الأعمال. يجب أن يكون المشارك فوق 18 سنة ولديه شغف بالابتكار في مجال الذكاء الاصطناعي.
+                </div>
             </div>
         </div>
         <div class="accordion-item">
@@ -234,38 +1444,104 @@
                 </button>
             </h2>
             <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">سيتم الإعلان عن تفاصيل الحضور لكل مرحلة عبر البريد الإلكتروني للمقبولين.</div>
+                <div class="accordion-body">
+                    الهاكاثون يجمع بين الحضور الميداني والمشاركة عن بعد. المرحلة الأولى ستكون إلكترونية، بينما النهائيات
+                    ستكون حضورية في الرياض. سيتم الإعلان عن تفاصيل الحضور لكل مرحلة عبر البريد الإلكتروني للمقبولين.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                    ما هي شروط المشاركة؟
+                </button>
+            </h2>
+            <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    يجب على المشاركين تقديم فكرة مبتكرة في مجال الذكاء الاصطناعي، وأن يكونوا على استعداد للعمل ضمن فريق.
+                    لا يشترط وجود خبرة سابقة، لكن يفضل أن يكون لدى المشاركين معرفة أساسية بمفاهيم الذكاء الاصطناعي.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+                    كيف يتم تقييم المشاريع؟
+                </button>
+            </h2>
+            <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    يتم تقييم المشاريع بناءً على عدة معايير: الابتكار، الجدوى التقنية، التأثير الاجتماعي، جودة التنفيذ،
+                    وقابلية التوسع. سيتم تقييم المشاريع من قبل لجنة تحكيم مكونة من خبراء في مجالات التكنولوجيا
+                    والابتكار.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+                    هل هناك رسوم للمشاركة؟
+                </button>
+            </h2>
+            <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    المشاركة في الهاكاثون مجانية بالكامل. سيتم توفير جميع الموارد والدعم اللازم للمشاركين خلال فترة
+                    المسابقة، بما في ذلك الوصول إلى الأدوات والمنصات التقنية.
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="register" class="container text-center mb-5">
-    <div class="p-5 border rounded-5 shadow-sm bg-white">
-        <h2 class="section-title">انضم إلينا الآن</h2>
-        <p class="mb-4">لا تفوت الفرصة لتكون جزءاً من مستقبل الذكاء الاصطناعي</p>
-        <form class="row g-3 justify-content-center">
-            <div class="col-md-4">
-                <input type="email" class="form-control form-control-lg" placeholder="البريد الإلكتروني">
-            </div>
-            <div class="col-md-2">
-                <button type="submit" class="btn btn-register w-100 py-2" style="padding: 10px !important;">إرسال</button>
-            </div>
-        </form>
-    </div>
-</section>
-
+<!-- التذييل -->
 <footer>
-    <div class="container text-center">
-        <p>جميع الحقوق محفوظة لـ ذكاء ثون &copy; 2026</p>
-        <div class="fs-3">
-            <i class="bi bi-twitter mx-2"></i>
-            <i class="bi bi-linkedin mx-2"></i>
-            <i class="bi bi-instagram mx-2"></i>
+        <div class="footer-bottom">
+            <p style="color: rgba(255,255,255,0.7); margin: 0;">
+                جميع الحقوق محفوضة لـ مركز الذكاء الاصطناعي - جامعة الأميرة نورة بنت عبدالرحمن | شركة علم © 2026
+            </p>
         </div>
-    </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // زر العودة للأعلى
+    window.addEventListener('scroll', function () {
+        const scrollToTop = document.querySelector('.scroll-to-top');
+        if (window.pageYOffset > 300) {
+            scrollToTop.classList.add('show');
+        } else {
+            scrollToTop.classList.remove('show');
+        }
+    });
+
+    // تأثيرات تفاعلية على البطاقات
+    document.querySelectorAll('.feature-card, .prize-card, .speaker-card, .step-box').forEach(card => {
+        card.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-5px)';
+        });
+        card.addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // تأثير على زر التسجيل
+    document.querySelector('.btn-register').addEventListener('mouseenter', function () {
+        this.style.transform = 'scale(1.05)';
+    });
+    document.querySelector('.btn-register').addEventListener('mouseleave', function () {
+        this.style.transform = 'scale(1)';
+    });
+
+    // تأثير على شعار الشريك
+    document.querySelectorAll('.partner-logo').forEach(logo => {
+        logo.addEventListener('mouseenter', function () {
+            this.style.transform = 'scale(1.1)';
+        });
+        logo.addEventListener('mouseleave', function () {
+            this.style.transform = 'scale(1)';
+        });
+    });
+</script>
 </body>
 </html>
