@@ -897,7 +897,10 @@
         .about p {
             width: 75%;
         }
-        .conditions {padding: 120px 0}
+
+        .conditions {
+            padding: 120px 0
+        }
 
 
         @media (max-width: 1200px) {
@@ -907,18 +910,23 @@
         }
 
         @media (max-width: 992px) {
-            .conditions {padding: 40px 0}
+            .conditions {
+                padding: 40px 0
+            }
 
         }
+
         @media (max-width: 768px) {
             .conditions .condition_items p {
                 max-width: 90%;
             }
         }
+
         @media (max-width: 575px) {
             .badge_section {
                 border-radius: 0px
             }
+
             .conditions {
                 padding: 20px !important;
             }
@@ -945,22 +953,39 @@
             .about p {
                 font-size: 16px !important;
             }
+
             .conditions .condition_items p {
-                font-size: 16px;}
+                font-size: 16px;
+            }
+
             .conditions {
                 padding: 20px 10px !important;
             }
+
             .badge_section {
-                padding: 20px 10px !important;}
-            .badge_section p{font-size: 16px !important;margin-bottom: 0px}
+                padding: 20px 10px !important;
+            }
+
+            .badge_section p {
+                font-size: 16px !important;
+                margin-bottom: 0px
+            }
+
             .accordion-button {
                 font-size: 14px !important;
             }
+
             .accordion-body {
                 font-size: 14px;
             }
-            .hashtag-section {border-radius: 0px !important}
-            .footer-bottom p{font-size: 14px}
+
+            .hashtag-section {
+                border-radius: 0px !important
+            }
+
+            .footer-bottom p {
+                font-size: 14px
+            }
         }
 
     </style>
@@ -1265,17 +1290,6 @@
             display: none;
         }
 
-        /* show a right-line and small circle before each card for mobile vertical timeline feel */
-        /*.timeline-card::before {*/
-        /*    content: '';*/
-        /*    position: absolute;*/
-        /*    right: -10px;*/
-        /*    top: 24px;*/
-        /*    width: 12px;*/
-        /*    height: 12px;*/
-        /*    background: var(--path);*/
-        /*    border-radius: 50%;*/
-        /*}*/
         .timeline-container {
             padding-top: 20px;
         }
@@ -1299,6 +1313,7 @@
             font-size: 1.15rem;
         }
     }
+
     .dot-1 {
         top: 28px;
         right: 200px;
@@ -1309,10 +1324,26 @@
         right: 200px;
         bottom: 55px;
     }
-    /* ========== positions for dots to visually align with svg path on lg >=992px ==========
-       We place the dots absolute inside .timeline-container.
-       You can tweak top/right percentages to match exact design.
-    ========== */
+
+
+    .hero_badge .timeline-card {
+        /*background-color: var(--light-bg);*/
+        border-radius: 20px;
+        padding: 40px 20px;
+        margin-top: -80px;
+        position: relative;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        z-index: 20 !important;
+    }
+
+    .timeline-card {
+        /*background-color: var(--light-bg);*/
+    }
+
+    .timetable .timeline-grid {
+        margin-top: -50px
+    }
+
     @media (max-width: 1400px) {
         .dot-1 {
             right: 180px;
@@ -1322,6 +1353,7 @@
             right: 180px;
         }
     }
+
     @media (max-width: 1200px) {
         .dot-1 {
             right: 150px;
@@ -1344,7 +1376,64 @@
         }
     }
 
-    @media (min-width: 992px) {
+    .timeline-svg.style1 {
+        display: block
+    }
+
+    .timeline-svg.style2 {
+        display: none
+    }
+
+    @media (max-width: 991px) {
+        .timeline-svg.style1 {
+            display: none
+        }
+
+        .timeline-svg.style2 {
+            display: block
+        }
+
+        .dot-1 {
+            right: 110px;
+            top: 21px;
+        }
+
+        .dot-10 {
+            right: 77px;
+            bottom: -60px;
+        }
+
+        .timetable .timeline-grid {
+            margin-top: -55px;
+        }
+
+        .timeline-svg.style2 {
+            height: 767px
+        }
+
+        .timeline-card.item-3, .timeline-card.item-4 {
+            margin-top: -55px
+        }
+
+        .timeline-card.item-5, .timeline-card.item-6 {
+            margin-top: -60px
+        }
+
+        .timeline-card.item-7, .timeline-card.item-8 {
+            margin-top: -70px
+        }
+
+        .timeline-card.item-9, .timeline-card.last {
+            margin-top: -55px
+        }
+
+        .timeline-card .date {
+            margin-bottom: 0px
+        }
+
+    }
+
+    @media (min-width: 993px) {
         .timeline-container {
             height: 720px;
         }
@@ -1352,31 +1441,104 @@
         .space_stat_item {
             display: none !important;
         }
+
     }
 
-
+    @media (max-width: 767px) {
+        .timeline-svg.style2 {
+            display: none
+        }
+    }
 
     /* small visual polish */
 
+    @media (max-width: 767px) {
+        .timeline-card.item-3, .timeline-card.item-4 {
+            margin-top: 0px
+        }
 
-    .hero_badge .timeline-card {
-        /*background-color: var(--light-bg);*/
-        border-radius: 20px;
-        padding: 40px 20px;
-        margin-top: -80px;
-        position: relative;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        z-index: 20 !important;
+        .timeline-card.item-5, .timeline-card.item-6 {
+            margin-top: 0px
+        }
+
+        .timeline-card.item-7, .timeline-card.item-8 {
+            margin-top: 0px
+        }
+
+        .timeline-card.item-9, .timeline-card.last {
+            margin-top: 0px
+        }
+
+        .timeline-card p {
+            width: 100%;
+        }
+
+        .timetable .timeline-grid {
+            margin-top: -110px;
+        }
+
+        .timeline-grid {
+            gap: 0px;
+            padding: 0 32px 0 0 !important;
+        }
+
+        .timeline-grid {
+            grid-template-columns: 1fr;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        /* Vertical line */
+        .timeline-grid::before {
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #007c8c;
+            border-radius: 2px;
+        }
+
+        /* Circles on the line */
+        .timeline-card {
+            position: relative;
+            margin-bottom: 40px;
+            padding-right: 20px;
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid #007c8c;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        /* Last item */
+        .timeline-card.last {
+            margin-bottom: 0;
+        }
+
+        .timeline-card.last::before {
+            top: 25px;
+        }
     }
 
-    .timeline-card {
-        /*background-color: var(--light-bg);*/
-    }
+    @media (max-width: 425px) {
+        .timeline-grid {
+            padding: 0 20px 0 0 !important;
+        }
 
-    .timetable .timeline-grid {
-        margin-top: -50px
+        .timeline-grid::before {
+            right: -1px;
+        }
     }
-
 </style>
 
 
@@ -1386,38 +1548,31 @@
         <div class="timeline-container">
 
             <!-- SVG decorative path (hidden on small screens via CSS) -->
-<!--            <svg-->
-<!--                    class="timeline-svg style2"-->
-<!--                    viewBox="0 0 1200 3700"-->
-<!--                    preserveAspectRatio="none"-->
-<!--                    xmlns="http://www.w3.org/2000/svg"-->
-<!--            >-->
-<!--                <path-->
-<!--                        fill="none"-->
-<!--                        stroke="currentColor"-->
-<!--                        stroke-width="4"-->
-<!--                        d="-->
+            <svg
+                    class="timeline-svg style2"
+                    viewBox="0 0 1200 3700"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        d="
+                        M 1010
+                         100 H
+                          110 C -40 120, -20 700, 110 700
+                           H 1070 C 1240 700, 1240 1300, 1070 1300
+                            H 110 C -40 1300, -20 1900, 110 1900
+                             H 1070 C 1240 1900, 1240 2500, 1070 2500
+                              H 110 C -40 2500, -20 3100, 110 3100
+                               H 1070
+"
+                />
+            </svg>
 
-<!--      M 1010 100-->
-<!--      H 110-->
-<!--      C -40 100, -40 700, 110 700-->
-<!--      H 1070-->
-<!--      C 1240 700, 1240 1300, 1070 1300-->
-<!--      H 110-->
-<!--      C -40 1300, -40 1900, 110 1900-->
-<!--      H 1070-->
-<!--      C 1240 1900, 1240 2500, 1070 2500-->
-<!--      H 110-->
-<!--      C -40 2500, -40 3100, 110 3100-->
-<!--      H 1070-->
-
-<!--&lt;!&ndash;    "&ndash;&gt;            </svg>-->
-
-            <!--                />-->
-<!--            </svg>-->
-
-                <svg
-                    class="timeline-svg"
+            <svg
+                    class="timeline-svg style1"
                     viewBox="0 0 1200 2600"
                     preserveAspectRatio="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1427,22 +1582,17 @@
                         stroke="currentColor"
                         stroke-width="4"
                         d="
-      M 1010 100
-      H 110
-      C -20 100, -20 850, 110 850
-      H 1070
-      C 1240 850, 1240 1625, 1070 1625
-      H 110
-      C -20 1600, -20 2350, 110 2350
-      H 1010
-    "
+                  M 1010 100
+                  H 110
+                  C -20 100, -20 850, 110 850
+                  H 1070
+                  C 1240 850, 1240 1625, 1070 1625
+                  H 110
+                  C -20 1600, -20 2350, 110 2350
+                  H 1010
+                "
                 />
             </svg>
-
-
-<!--            <style>-->
-<!--                .timeline-card.last{margin-right: 55px}-->
-<!--            </style>-->
 
             <!-- decorative dots (positioned absolute above) -->
             <span class="timeline-dot dot-1"></span>
@@ -1452,63 +1602,63 @@
             <div class="timeline-grid">
 
                 <!-- item 1 -->
-                <div class="timeline-card">
+                <div class="timeline-card item-1">
                     <span class="date">10 مارس 2026</span>
                     <h4>فتح باب التسجيل</h4>
                     <p>بداية استقبال طلبات التسجيل من المشاركين.</p>
                 </div>
 
                 <!-- item 2 -->
-                <div class="timeline-card">
+                <div class="timeline-card  item-2">
                     <span class="date">25 مارس 2026</span>
                     <h4>إغلاق التسجيل</h4>
                     <p>آخر موعد لتقديم طلبات المشاركة.</p>
                 </div>
 
                 <!-- item 3 -->
-                <div class="timeline-card">
+                <div class="timeline-card  item-3">
                     <span class="date">5 أبريل 2026</span>
                     <h4>بدء الفرز الأولي</h4>
                     <p>فرز الطلبات واختيار المشاركات المناسبة.</p>
                 </div>
 
                 <!-- item 4 -->
-                <div class="timeline-card">
+                <div class="timeline-card  item-4">
                     <span class="date">20 أبريل 2026</span>
                     <h4>انطلاق الهاكاثون</h4>
                     <p>حفل الافتتاح وبدء العمل على التحديات.</p>
                 </div>
 
                 <!-- item 5 -->
-                <div class="timeline-card">
+                <div class="timeline-card  item-5">
                     <span class="date">21–24 أبريل 2026</span>
                     <h4>المرحلة الأولى: تطوير الأفكار</h4>
                     <p>فترة العمل على نماذج تطوير الأفكار والنماذج الأولية.</p>
                 </div>
 
                 <!-- item 6 -->
-                <div class="timeline-card">
+                <div class="timeline-card  item-6">
                     <span class="date">27 أبريل 2026</span>
                     <h4>إعلان نتائج الفرز الأول</h4>
                     <p>الإعلان عن الفرق المتأهلة للمرحلة التالية.</p>
                 </div>
 
                 <!-- item 7 -->
-                <div class="timeline-card">
+                <div class="timeline-card  item-7">
                     <span class="date">29–30 أبريل 2026</span>
                     <h4>ورش العمل المتقدمة</h4>
                     <p>ورش إرشادية ودعم فني للفرق المتأهلة.</p>
                 </div>
 
                 <!-- item 8 -->
-                <div class="timeline-card">
+                <div class="timeline-card  item-8">
                     <span class="date">1–8 مايو 2026</span>
                     <h4>المرحلة الثانية: النماذج الأولية</h4>
                     <p>تطوير النماذج الأولية وتجهيز العروض النهائية.</p>
                 </div>
 
                 <!-- item 9 -->
-                <div class="timeline-card">
+                <div class="timeline-card  item-9">
                     <span class="date">10 مايو 2026</span>
                     <h4>التحكيم النهائي</h4>
                     <p>تقييم المشاريع من قبل لجنة التحكيم المتخصصة.</p>
@@ -1527,240 +1677,6 @@
     </div>
 </section>
 
-<!-- Bootstrap RTL -->
-
-
-<!--<style>-->
-<!--    .timeline-wrap{-->
-<!--        background:#efeff8;-->
-<!--        padding:90px 0;-->
-<!--        direction:rtl;-->
-<!--        font-family:'Cairo',sans-serif;-->
-<!--    }-->
-
-<!--    .timeline-title{-->
-<!--        background:#0b6f74;-->
-<!--        color:#fff;-->
-<!--        padding:35px 45px;-->
-<!--        border-radius:22px;-->
-<!--        max-width:720px;-->
-<!--        margin:0 auto 80px;-->
-<!--    }-->
-
-<!--    .timeline-title h2{-->
-<!--        font-weight:900;-->
-<!--        margin-bottom:4px;-->
-<!--    }-->
-
-<!--    .timeline-area{-->
-<!--        position:relative;-->
-<!--        max-width:1200px;-->
-<!--        margin:auto;-->
-<!--        height:900px;-->
-<!--    }-->
-
-<!--    .timeline-svg{-->
-<!--        position:absolute;-->
-<!--        inset:0;-->
-<!--    }-->
-
-<!--    .timeline-svg path{-->
-<!--        fill:none;-->
-<!--        stroke:#6f73b8;-->
-<!--        stroke-width:4;-->
-<!--        stroke-linecap:round;-->
-<!--    }-->
-
-<!--    /* Points */-->
-<!--    .point{-->
-<!--        position:absolute;-->
-<!--        width:14px;-->
-<!--        height:14px;-->
-<!--        background:#6f73b8;-->
-<!--        border-radius:50%;-->
-<!--    }-->
-
-<!--    /* Items */-->
-<!--    .item{-->
-<!--        position:absolute;-->
-<!--        width:260px;-->
-<!--        text-align:right;-->
-<!--    }-->
-
-<!--    .item h4{-->
-<!--        font-weight:800;-->
-<!--        margin:4px 0;-->
-<!--        color:#1b2d5c;-->
-<!--    }-->
-
-<!--    .item p{-->
-<!--        margin:0;-->
-<!--        font-size:.9rem;-->
-<!--        color:#555;-->
-<!--    }-->
-
-<!--    .date{-->
-<!--        color:#00c37a;-->
-<!--        font-weight:800;-->
-<!--        font-size:.85rem;-->
-<!--    }-->
-
-<!--    /* ===== POSITIONS (مطابقة للصورة) ===== */-->
-
-<!--    /* ROW 1 */-->
-<!--    .p1{ top:90px; right:70px;}-->
-<!--    .i1{ top:40px; right:0;}-->
-
-<!--    .p2{ top:90px; right:360px;}-->
-<!--    .i2{ top:40px; right:290px;}-->
-
-<!--    .p3{ top:90px; right:650px;}-->
-<!--    .i3{ top:40px; right:580px;}-->
-
-<!--    /* ROW 2 */-->
-<!--    .p4{ top:240px; right:650px;}-->
-<!--    .i4{ top:260px; right:580px;}-->
-
-<!--    .p5{ top:240px; right:360px;}-->
-<!--    .i5{ top:260px; right:290px;}-->
-
-<!--    .p6{ top:240px; right:70px;}-->
-<!--    .i6{ top:260px; right:0;}-->
-
-<!--    /* ROW 3 */-->
-<!--    .p7{ top:390px; right:70px;}-->
-<!--    .i7{ top:410px; right:0;}-->
-
-<!--    .p8{ top:390px; right:360px;}-->
-<!--    .i8{ top:410px; right:290px;}-->
-
-<!--    .p9{ top:390px; right:650px;}-->
-<!--    .i9{ top:410px; right:580px;}-->
-
-<!--    /* LAST */-->
-<!--    .p10{ top:690px; right:650px;}-->
-<!--    .i10{ top:720px; right:580px;}-->
-
-<!--    /* Responsive */-->
-<!--    @media(max-width:992px){-->
-<!--        .timeline-area{height:auto}-->
-<!--        .timeline-svg{display:none}-->
-<!--        .point{display:none}-->
-<!--        .item{-->
-<!--            position:static;-->
-<!--            width:100%;-->
-<!--            margin-bottom:25px;-->
-<!--        }-->
-<!--    }-->
-
-<!--</style>-->
-
-<!--<section class="timeline-wrap">-->
-<!--    <div class="container">-->
-
-<!--        &lt;!&ndash; Header &ndash;&gt;-->
-<!--        <div class="timeline-title">-->
-<!--            <h2>الجدول الزمني</h2>-->
-<!--            <p>جميع المراحل والمواعيد المهمة</p>-->
-<!--        </div>-->
-
-<!--        &lt;!&ndash; Timeline Area &ndash;&gt;-->
-<!--        <div class="timeline-area">-->
-
-<!--            &lt;!&ndash; SVG PATH &ndash;&gt;-->
-<!--            <svg viewBox="0 0 1200 900" class="timeline-svg" preserveAspectRatio="none">-->
-<!--                <path d="-->
-<!--          M 100 100-->
-<!--          H 1050-->
-<!--          C 1120 100, 1120 250, 1050 250-->
-<!--          H 150-->
-<!--          C 80 250, 80 400, 150 400-->
-<!--          H 1050-->
-<!--          C 1120 400, 1120 550, 1050 550-->
-<!--          H 150-->
-<!--          C 80 550, 80 700, 150 700-->
-<!--          H 1050-->
-<!--        " />-->
-<!--            </svg>-->
-
-<!--            &lt;!&ndash; POINTS &ndash;&gt;-->
-<!--            <span class="point p1"></span>-->
-<!--            <span class="point p2"></span>-->
-<!--            <span class="point p3"></span>-->
-<!--            <span class="point p4"></span>-->
-<!--            <span class="point p5"></span>-->
-<!--            <span class="point p6"></span>-->
-<!--            <span class="point p7"></span>-->
-<!--            <span class="point p8"></span>-->
-<!--            <span class="point p9"></span>-->
-<!--            <span class="point p10"></span>-->
-
-<!--            &lt;!&ndash; ITEMS &ndash;&gt;-->
-<!--            <div class="item i1">-->
-<!--                <span class="date">10 مارس 2026</span>-->
-<!--                <h4>فتح باب التسجيل</h4>-->
-<!--                <p>بدء استقبال طلبات التسجيل</p>-->
-<!--            </div>-->
-
-<!--            <div class="item i2">-->
-<!--                <span class="date">25 مارس 2026</span>-->
-<!--                <h4>إغلاق التسجيل</h4>-->
-<!--                <p>آخر موعد للتقديم</p>-->
-<!--            </div>-->
-
-<!--            <div class="item i3">-->
-<!--                <span class="date">5 أبريل 2026</span>-->
-<!--                <h4>بدء الفرز الأولي</h4>-->
-<!--                <p>فرز واختيار المشاركات</p>-->
-<!--            </div>-->
-
-<!--            <div class="item i4">-->
-<!--                <span class="date">20 أبريل 2026</span>-->
-<!--                <h4>انطلاق الهاكاثون</h4>-->
-<!--                <p>بدء التحديات</p>-->
-<!--            </div>-->
-
-<!--            <div class="item i5">-->
-<!--                <span class="date">21–24 أبريل 2026</span>-->
-<!--                <h4>المرحلة الأولى</h4>-->
-<!--                <p>تطوير الأفكار</p>-->
-<!--            </div>-->
-
-<!--            <div class="item i6">-->
-<!--                <span class="date">27 أبريل 2026</span>-->
-<!--                <h4>نتائج الفرز الأول</h4>-->
-<!--                <p>الإعلان عن المتأهلين</p>-->
-<!--            </div>-->
-
-<!--            <div class="item i7">-->
-<!--                <span class="date">29–30 أبريل 2026</span>-->
-<!--                <h4>ورش العمل المتقدمة</h4>-->
-<!--                <p>جلسات إرشاد</p>-->
-<!--            </div>-->
-
-<!--            <div class="item i8">-->
-<!--                <span class="date">1–8 مايو 2026</span>-->
-<!--                <h4>المرحلة الثانية</h4>-->
-<!--                <p>النماذج الأولية</p>-->
-<!--            </div>-->
-
-<!--            <div class="item i9">-->
-<!--                <span class="date">10 مايو 2026</span>-->
-<!--                <h4>التحكيم النهائي</h4>-->
-<!--                <p>تقييم المشاريع</p>-->
-<!--            </div>-->
-
-<!--            <div class="item i10">-->
-<!--                <span class="date">20 مايو 2026</span>-->
-<!--                <h4>إعلان النتائج</h4>-->
-<!--                <p>تكريم الفائزين</p>-->
-<!--            </div>-->
-
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-
-<!-- قسم الأسئلة الشائعة -->
 
 <div class="container badge_section" style="margin-top: -80px">
     <h2>الأسئلة الشائعة</h2>
@@ -1819,11 +1735,11 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q">
                     ما الفرق بين المشاركة الحضورية والمشاركة عن بعد؟
                 </button>
             </h2>
-            <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div id="q" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
                 </div>
             </div>
