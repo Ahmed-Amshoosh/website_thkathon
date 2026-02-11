@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ذكاء ثون | Thka-Thon 2026</title>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-
     <style>
         :root {
             --primary-color: #005367; /* الزيتي الغامق من الصورة */
@@ -154,252 +152,6 @@
             font-size: 2.5rem;
         }
 
-        /* --- قسم المميزات --- */
-        .feature-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            border-top: 5px solid var(--accent-color);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent-color), #2de98c);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2.5rem;
-        }
-
-        .feature-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .feature-text {
-            line-height: 1.8;
-            color: #666;
-        }
-
-        /* --- قسم الجوائز --- */
-        .prizes-section {
-            background: linear-gradient(135deg, var(--light-bg) 0%, #e8f8f2 100%);
-        }
-
-        .prize-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .prize-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--accent-color), #2de98c);
-        }
-
-        .prize-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .prize-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        .prize-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .prize-amount {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--primary-color);
-            margin: 15px 0;
-        }
-
-        .prize-description {
-            color: #666;
-            line-height: 1.7;
-        }
-
-        /* --- قسم المتحدثين --- */
-        .speakers-section {
-            background-color: #f8f9fa;
-        }
-
-        .speaker-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-
-        .speaker-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .speaker-image {
-            height: 250px;
-            background: linear-gradient(135deg, var(--primary-color), #003d45);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 5rem;
-        }
-
-        .speaker-info {
-            padding: 25px;
-            text-align: center;
-        }
-
-        .speaker-name {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .speaker-title {
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .speaker-bio {
-            color: #666;
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-
-        .speaker-social {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--light-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--accent-color);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* --- قسم الشراكات --- */
-        .partners-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #003d45 100%);
-            color: white;
-            padding: 60px 0;
-        }
-
-        .partner-logo {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 120px;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .partner-logo:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
-        }
-
-        /* --- الجدول الزمني (الخطوات) --- */
-        .step-box {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            border: 1px solid #eee;
-            transition: 0.3s;
-            height: 100%;
-        }
-
-        .step-box:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .step-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .step-text {
-            color: #666;
-            line-height: 1.7;
-        }
-
         /* --- الأسئلة الشائعة --- */
         .accordion-button {
             font-weight: 600;
@@ -418,40 +170,6 @@
 
         .accordion-button:not(.collapsed)::after {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23005d6a'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-
-        /* --- قسم التسجيل --- */
-        .register-section {
-            background: linear-gradient(135deg, var(--light-bg) 0%, #e8f8f2 100%);
-        }
-
-        .register-container {
-            background: white;
-            padding: 40px;
-            border-radius: 30px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-control {
-            border-radius: 10px;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(69, 245, 161, 0.2);
-        }
-
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-label {
-            font-weight: 600;
-            color: var(--primary-color);
         }
 
         /* --- التذييل --- */
@@ -480,47 +198,6 @@
             background: var(--accent-color);
         }
 
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: block;
-            padding: 5px 0;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-color);
-            padding-right: 10px;
-        }
-
-        .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .footer-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-color);
-            font-size: 1.2rem;
-        }
-
         .footer-bottom {
             text-align: center;
 
@@ -528,32 +205,6 @@
 
         .footer-bottom p {
             color: white !important;
-        }
-
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .footer-social a {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s ease;
-            font-size: 1.3rem;
-        }
-
-        .footer-social a:hover {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            transform: translateY(-3px);
         }
 
         /* --- زر العودة للأعلى --- */
@@ -607,14 +258,6 @@
             .section-title {
                 font-size: 2rem;
             }
-
-            .register-container {
-                padding: 25px;
-            }
-
-            .footer-col {
-                margin-bottom: 30px;
-            }
         }
 
         @media (max-width: 576px) {
@@ -639,8 +282,7 @@
                 font-size: 1rem;
             }
         }
-    </style>
-    <style>
+
         .conditions .condition_items {
             padding: 50px 0 0 0 !important;
         }
@@ -666,19 +308,6 @@
             color: #013f45;
             font-size: 18px;
             max-width: 80%;
-        }
-    </style>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
         }
 
         /* قسم الهاشتاجات العلوية */
@@ -756,28 +385,8 @@
             margin-bottom: 15px;
         }
 
-        .logo-text {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.5;
-            font-weight: 600;
-        }
-
         .faq {
             padding-bottom: 40px !important
-        }
-
-        .university-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #005d6a;
-            margin-bottom: 10px;
-        }
-
-        .faculty-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #c0392b;
         }
 
         /* التصميم المتجاوب */
@@ -812,22 +421,8 @@
             .section-title {
                 font-size: 1.5rem;
             }
-
-            .logo-text {
-                font-size: 1rem;
-            }
-
-            .university-name {
-                font-size: 1.1rem;
-            }
-
-            .faculty-name {
-                font-size: 1rem;
-            }
         }
-    </style>
 
-    <style>
         .navbar-brand {
             width: 260px
         }
@@ -988,6 +583,370 @@
             }
         }
 
+        :root {
+            --bg: #efeff8;
+            --hero-green: #0b6f74;
+            --accent: #14ce7c;
+            --path: #6f73b8;
+            --card: #ffffff;
+            --muted: #5b6b7a;
+        }
+
+        /* container for svg background */
+        .timeline-container {
+            position: relative;
+            margin: 0 auto;
+            padding: 40px 8px 0;
+        }
+
+        /* SVG decorative path (only visible on large screens) */
+        .timeline-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .timeline-svg path {
+            fill: none;
+            stroke: var(--path);
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.95;
+        }
+
+        /* Grid items (cards) */
+        .timeline-grid {
+            position: relative;
+            z-index: 2; /* above svg */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-right: 140px;
+            gap: 88px 26px;
+        }
+
+        /* card style */
+        .timeline-section .timeline-card {
+            background-color: transparent !important;
+        }
+
+        .timeline-card .date {
+            display: block;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.9;
+        }
+
+        .timeline-card h4 {
+            margin: 0 0 6px;
+            font-size: 1.02rem;
+            font-weight: 800;
+            color: #007580;
+        }
+
+        .timeline-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.35;
+            width: 60%;
+        }
+
+        /* decorative dot that appears next to card when svg visible */
+        .timeline-dot {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--path);
+            z-index: 1;
+            transform: translate(50%, -50%);
+            box-shadow: 0 4px 10px rgba(111, 115, 184, 0.22);
+        }
+        li {
+            color: #5b6b7a;
+            font-size: 14px;
+
+        }
+        li::marker {
+            font-size: 12px;
+            color: #5b6b7a;
+        }
+        ul {
+            list-style-type: square;
+            margin-right: 0 !important;
+            padding-right: 0!important;
+        }
+        .timeline-card.last {
+            margin-top: -60px;
+        }
+        .timeline-card.item-7,.timeline-card.item-8,.timeline-card.item-9 {
+            margin-top: -40px;
+        }
+        /* ========== Responsive grid breakpoints ========== */
+        /* medium (2 columns) */
+        @media (max-width: 991.98px) {
+            .timeline-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* small (1 column) */
+        @media (max-width: 767.98px) {
+            .timeline-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* hide the svg and decorative dots on small screens */
+            .timeline-svg,
+            .timeline-dot {
+                display: none;
+            }
+
+            .timeline-container {
+                padding-top: 20px;
+            }
+        }
+
+        .dot-1 {
+            top: 28px;
+            right: 200px;
+        }
+
+        .dot-10 {
+            top: auto;
+            right: 200px;
+            bottom: 55px;
+        }
+
+
+        .hero_badge .timeline-card {
+            /*background-color: var(--light-bg);*/
+            border-radius: 20px;
+            padding: 40px 20px;
+            margin-top: -80px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            z-index: 20 !important;
+        }
+
+        .timeline-card {
+            /*background-color: var(--light-bg);*/
+        }
+
+        .timetable .timeline-grid {
+            margin-top: -50px
+        }
+
+        @media (max-width: 1400px) {
+            .dot-1 {
+                right: 180px;
+            }
+
+            .dot-10 {
+                right: 180px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .dot-1 {
+                right: 150px;
+            }
+
+            .dot-10 {
+                right: 150px;
+            }
+
+            .timetable .timeline-grid {
+                margin-top: -46px;
+            }
+
+            .timeline-grid {
+                gap: 69px 26px;
+            }
+
+            .timeline-card h4 {
+                padding-top: 6px;
+            }
+        }
+        @media (max-width: 1199px) {
+            .timeline-card.item-7,.timeline-card.item-8,.timeline-card.item-9 {
+                margin-top: -15px;
+            }
+            .timeline-card.last{
+                margin-top: -50px;
+            }
+        }
+        .timeline-svg.style1 {
+            display: block
+        }
+
+        .timeline-svg.style2 {
+            display: none
+        }
+
+        @media (max-width: 991px) {
+            .timeline-svg.style1 {
+                display: none
+            }
+
+            .timeline-svg.style2 {
+                display: block
+            }
+
+            .dot-1 {
+                right: 110px;
+                top: 21px;
+            }
+
+            .dot-10 {
+                right: 77px;
+                bottom: -20px;
+            }
+
+            .timetable .timeline-grid {
+                margin-top: -55px;
+            }
+
+            .timeline-svg.style2 {
+                height: 840px
+            }
+
+            .timeline-card.item-3, .timeline-card.item-4 {
+                margin-top: -40px
+            }
+
+            .timeline-card.item-5, .timeline-card.item-6 {
+                margin-top: -43px
+            }
+
+            .timeline-card.item-7, .timeline-card.item-8 {
+                margin-top: -80px
+            }
+
+            .timeline-card.item-9, .timeline-card.last {
+                margin-top: -70px
+            }
+            .timeline-card.last p {width: 80%}
+
+            .timeline-card .date {
+                margin-bottom: 0px
+            }
+
+        }
+
+        @media (min-width: 993px) {
+            .timeline-container {
+                height: 720px;
+            }
+
+            .space_stat_item {
+                display: none !important;
+            }
+
+        }
+
+        @media (max-width: 767px) {
+            .timeline-svg.style2 {
+                display: none
+            }
+        }
+
+        /* small visual polish */
+
+        @media (max-width: 767px) {
+            .timeline-card.item-3, .timeline-card.item-4 {
+                margin-top: 0px
+            }
+
+            .timeline-card.item-5, .timeline-card.item-6 {
+                margin-top: 0px
+            }
+
+            .timeline-card.item-7, .timeline-card.item-8 {
+                margin-top: 0px
+            }
+
+            .timeline-card.item-9, .timeline-card.last {
+                margin-top: 0px
+            }
+
+            .timeline-card p {
+                width: 100%;
+            }
+
+            .timetable .timeline-grid {
+                margin-top: -110px;
+            }
+
+            .timeline-grid {
+                gap: 0px;
+                padding: 0 32px 0 0 !important;
+            }
+
+            .timeline-grid {
+                grid-template-columns: 1fr;
+                padding-left: 40px;
+                position: relative;
+            }
+
+            /* Vertical line */
+            .timeline-grid::before {
+                content: '';
+                position: absolute;
+                right: 10px;
+                top: 0;
+                bottom: 0;
+                width: 4px;
+                background: #6f73b8;
+                border-radius: 2px;
+            }
+
+            /* Circles on the line */
+            .timeline-card {
+                position: relative;
+                margin-bottom: 40px;
+                padding-right: 20px;
+            }
+
+            .timeline-card::before {
+                content: '';
+                position: absolute;
+                right: -30px;
+                top: 25px;
+                width: 20px;
+                height: 20px;
+                background: white;
+                border: 4px solid #6f73b8;
+                border-radius: 50%;
+                z-index: 2;
+            }
+
+            /* Last item */
+            .timeline-card.last {
+                margin-bottom: 0;
+            }
+
+            .timeline-card.last::before {
+                top: 25px;
+            }
+        }
+
+        @media (max-width: 425px) {
+            .timeline-grid {
+                padding: 0 20px 0 0 !important;
+            }
+
+            .timeline-grid::before {
+                right: -1px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -996,7 +955,6 @@
 <a href="#" class="scroll-to-top">
     <i class="bi bi-arrow-up"></i>
 </a>
-
 <!-- الهيدر -->
 <header class="hero-section">
     <div class="container">
@@ -1143,405 +1101,6 @@
     font-size: 22px;">جميع المراحل والمواعيد المهمة</p>
 </div>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-
-<!-- Cairo font -->
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-
-<style>
-    :root {
-        --bg: #efeff8;
-        --hero-green: #0b6f74;
-        --accent: #14ce7c;
-        --path: #6f73b8;
-        --card: #ffffff;
-        --muted: #5b6b7a;
-    }
-
-    body {
-        font-family: "Cairo", sans-serif;
-        margin: 0;
-        color: #1d2330;
-    }
-
-    /* Section wrapper */
-    .timeline-section {
-        padding: 60px 16px 90px;
-    }
-
-    /* Header box (matches الصورة) */
-    .timeline-header {
-        max-width: 860px;
-        margin: 0 auto 48px;
-        background: var(--hero-green);
-        color: #fff;
-        padding: 26px 32px;
-        border-radius: 14px;
-        text-align: right;
-        box-shadow: 0 8px 24px rgba(6, 44, 44, 0.08);
-    }
-
-    .timeline-header h2 {
-        font-weight: 900;
-        margin: 0 0 6px;
-        font-size: 1.35rem;
-    }
-
-    .timeline-header p {
-        margin: 0;
-        opacity: 0.92;
-        font-weight: 600;
-    }
-
-    /* container for svg background */
-    .timeline-container {
-        position: relative;
-        margin: 0 auto;
-        padding: 40px 8px 0;
-    }
-
-    /* SVG decorative path (only visible on large screens) */
-    .timeline-svg {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 0;
-    }
-
-    .timeline-svg path {
-        fill: none;
-        stroke: var(--path);
-        stroke-width: 4;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        opacity: 0.95;
-    }
-
-    /* Grid items (cards) */
-    .timeline-grid {
-        position: relative;
-        z-index: 2; /* above svg */
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding-right: 140px;
-        gap: 88px 26px;
-    }
-
-    /* card style */
-    .timeline-section .timeline-card {
-        background-color: transparent !important;
-    }
-
-    .timeline-card .date {
-        display: block;
-        color: var(--accent);
-        margin-bottom: 15px;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 1.9;
-    }
-
-    .timeline-card h4 {
-        margin: 0 0 6px;
-        font-size: 1.02rem;
-        font-weight: 800;
-        color: #007580;
-    }
-
-    .timeline-card p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.95rem;
-        line-height: 1.35;
-        width: 60%;
-    }
-
-    /* decorative dot that appears next to card when svg visible */
-    .timeline-dot {
-        position: absolute;
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background: var(--path);
-        z-index: 1;
-        transform: translate(50%, -50%);
-        box-shadow: 0 4px 10px rgba(111, 115, 184, 0.22);
-    }
-
-    /* ========== Responsive grid breakpoints ========== */
-    /* medium (2 columns) */
-    @media (max-width: 991.98px) {
-        .timeline-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    /* small (1 column) */
-    @media (max-width: 767.98px) {
-        .timeline-grid {
-            grid-template-columns: 1fr;
-        }
-
-        /* hide the svg and decorative dots on small screens */
-        .timeline-svg,
-        .timeline-dot {
-            display: none;
-        }
-
-        .timeline-container {
-            padding-top: 20px;
-        }
-    }
-
-    /* small adjustments */
-    @media (max-width: 1200px) {
-        .timeline-header {
-            max-width: 720px;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .timeline-header {
-            padding: 18px;
-            border-radius: 12px;
-            text-align: right;
-        }
-
-        .timeline-header h2 {
-            font-size: 1.15rem;
-        }
-    }
-
-    .dot-1 {
-        top: 28px;
-        right: 200px;
-    }
-
-    .dot-10 {
-        top: auto;
-        right: 200px;
-        bottom: 55px;
-    }
-
-
-    .hero_badge .timeline-card {
-        /*background-color: var(--light-bg);*/
-        border-radius: 20px;
-        padding: 40px 20px;
-        margin-top: -80px;
-        position: relative;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        z-index: 20 !important;
-    }
-
-    .timeline-card {
-        /*background-color: var(--light-bg);*/
-    }
-
-    .timetable .timeline-grid {
-        margin-top: -50px
-    }
-
-    @media (max-width: 1400px) {
-        .dot-1 {
-            right: 180px;
-        }
-
-        .dot-10 {
-            right: 180px;
-        }
-    }
-
-    @media (max-width: 1200px) {
-        .dot-1 {
-            right: 150px;
-        }
-
-        .dot-10 {
-            right: 150px;
-        }
-
-        .timetable .timeline-grid {
-            margin-top: -46px;
-        }
-
-        .timeline-grid {
-            gap: 69px 26px;
-        }
-
-        .timeline-card h4 {
-            padding-top: 6px;
-        }
-    }
-
-    .timeline-svg.style1 {
-        display: block
-    }
-
-    .timeline-svg.style2 {
-        display: none
-    }
-
-    @media (max-width: 991px) {
-        .timeline-svg.style1 {
-            display: none
-        }
-
-        .timeline-svg.style2 {
-            display: block
-        }
-
-        .dot-1 {
-            right: 110px;
-            top: 21px;
-        }
-
-        .dot-10 {
-            right: 77px;
-            bottom: -60px;
-        }
-
-        .timetable .timeline-grid {
-            margin-top: -55px;
-        }
-
-        .timeline-svg.style2 {
-            height: 767px
-        }
-
-        .timeline-card.item-3, .timeline-card.item-4 {
-            margin-top: -55px
-        }
-
-        .timeline-card.item-5, .timeline-card.item-6 {
-            margin-top: -60px
-        }
-
-        .timeline-card.item-7, .timeline-card.item-8 {
-            margin-top: -70px
-        }
-
-        .timeline-card.item-9, .timeline-card.last {
-            margin-top: -55px
-        }
-
-        .timeline-card .date {
-            margin-bottom: 0px
-        }
-
-    }
-
-    @media (min-width: 993px) {
-        .timeline-container {
-            height: 720px;
-        }
-
-        .space_stat_item {
-            display: none !important;
-        }
-
-    }
-
-    @media (max-width: 767px) {
-        .timeline-svg.style2 {
-            display: none
-        }
-    }
-
-    /* small visual polish */
-
-    @media (max-width: 767px) {
-        .timeline-card.item-3, .timeline-card.item-4 {
-            margin-top: 0px
-        }
-
-        .timeline-card.item-5, .timeline-card.item-6 {
-            margin-top: 0px
-        }
-
-        .timeline-card.item-7, .timeline-card.item-8 {
-            margin-top: 0px
-        }
-
-        .timeline-card.item-9, .timeline-card.last {
-            margin-top: 0px
-        }
-
-        .timeline-card p {
-            width: 100%;
-        }
-
-        .timetable .timeline-grid {
-            margin-top: -110px;
-        }
-
-        .timeline-grid {
-            gap: 0px;
-            padding: 0 32px 0 0 !important;
-        }
-
-        .timeline-grid {
-            grid-template-columns: 1fr;
-            padding-left: 40px;
-            position: relative;
-        }
-
-        /* Vertical line */
-        .timeline-grid::before {
-            content: '';
-            position: absolute;
-            right: 10px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: #007c8c;
-            border-radius: 2px;
-        }
-
-        /* Circles on the line */
-        .timeline-card {
-            position: relative;
-            margin-bottom: 40px;
-            padding-right: 20px;
-        }
-
-        .timeline-card::before {
-            content: '';
-            position: absolute;
-            right: -30px;
-            top: 25px;
-            width: 20px;
-            height: 20px;
-            background: white;
-            border: 4px solid #007c8c;
-            border-radius: 50%;
-            z-index: 2;
-        }
-
-        /* Last item */
-        .timeline-card.last {
-            margin-bottom: 0;
-        }
-
-        .timeline-card.last::before {
-            top: 25px;
-        }
-    }
-
-    @media (max-width: 425px) {
-        .timeline-grid {
-            padding: 0 20px 0 0 !important;
-        }
-
-        .timeline-grid::before {
-            right: -1px;
-        }
-    }
-</style>
-
-
 <section class="timetable" style="background-color: #6f73b812;padding: 200px 0">
 
     <div class="container">
@@ -1605,70 +1164,92 @@
                 <div class="timeline-card item-1">
                     <span class="date">10 مارس 2026</span>
                     <h4>فتح باب التسجيل</h4>
-                    <p>بداية استقبال طلبات التسجيل من المشاركين.</p>
+                    <p>بدايــة اســتقبال طلبــات
+                        التسجيل من المشاركات
+                    </p>
                 </div>
 
                 <!-- item 2 -->
                 <div class="timeline-card  item-2">
                     <span class="date">25 مارس 2026</span>
                     <h4>إغلاق التسجيل</h4>
-                    <p>آخر موعد لتقديم طلبات المشاركة.</p>
+                    <p>آخـر موعـد لتقديـم طلبـات
+                        المشاركة</p>
                 </div>
 
                 <!-- item 3 -->
                 <div class="timeline-card  item-3">
                     <span class="date">5 أبريل 2026</span>
-                    <h4>بدء الفرز الأولي</h4>
-                    <p>فرز الطلبات واختيار المشاركات المناسبة.</p>
+                    <h4>بدء الفرز الأول</h4>
+                    <p>فــرز الطلبــات واختيــار
+                        المشاركات</p>
                 </div>
 
                 <!-- item 4 -->
                 <div class="timeline-card  item-4">
-                    <span class="date">20 أبريل 2026</span>
-                    <h4>انطلاق الهاكاثون</h4>
-                    <p>حفل الافتتاح وبدء العمل على التحديات.</p>
+                    <span class="date">27 أبريل 2026</span>
+                    <h4>إعلان نتائج الفرز الأول</h4>
+                    <p>الإعــلان عــن الفــرق المتأهلــة
+                        للمرحلة الثانية</p>
                 </div>
 
                 <!-- item 5 -->
                 <div class="timeline-card  item-5">
                     <span class="date">21–24 أبريل 2026</span>
-                    <h4>المرحلة الأولى: تطوير الأفكار</h4>
-                    <p>فترة العمل على نماذج تطوير الأفكار والنماذج الأولية.</p>
+                    <h4>المرحلة الأولى:
+                        تطوير الأفكار</h4>
+                    <p>فــترة العمــل عــلى نمــاذج
+                        تطويــر الأفــكار وتســليمها
+                        (24 أبريل)</p>
                 </div>
 
                 <!-- item 6 -->
                 <div class="timeline-card  item-6">
-                    <span class="date">27 أبريل 2026</span>
-                    <h4>إعلان نتائج الفرز الأول</h4>
-                    <p>الإعلان عن الفرق المتأهلة للمرحلة التالية.</p>
+                    <span class="date">20 أبريل 2026</span>
+                    <h4>انطلاق الهاكاثون</h4>
+                    <ul>
+                        <li>حفل الافتتاح</li>
+                        <li>ورشة: مفهوم الابتكار والتفكير التصميمي</li>
+                        <li>ورشة: بناء نموذج العمل Business Model</li>
+                    </ul>
                 </div>
 
                 <!-- item 7 -->
                 <div class="timeline-card  item-7">
-                    <span class="date">29–30 أبريل 2026</span>
+                    <span class="date">29-30 أبريل 2026</span>
+
                     <h4>ورش العمل المتقدمة</h4>
-                    <p>ورش إرشادية ودعم فني للفرق المتأهلة.</p>
+                    <ul>
+                        <li>ورشة تجربة المستخدم (د. نوف المجلي)</li>
+                        <li>تصميم النماذج الأولية (أ. سعد النفيسة)</li>
+                        <li>جلسات إرشادية</li>
+                        <li>مهارات العرض التقديمي (د. سارة عيوني)</li>
+                    </ul>
                 </div>
 
                 <!-- item 8 -->
                 <div class="timeline-card  item-8">
                     <span class="date">1–8 مايو 2026</span>
                     <h4>المرحلة الثانية: النماذج الأولية</h4>
-                    <p>تطوير النماذج الأولية وتجهيز العروض النهائية.</p>
+                    <p>فــترة تطويــر النمــاذج الأوليــة
+                        وتسليم المشاريع (8 مايو)</p>
                 </div>
 
                 <!-- item 9 -->
                 <div class="timeline-card  item-9">
                     <span class="date">10 مايو 2026</span>
                     <h4>التحكيم النهائي</h4>
-                    <p>تقييم المشاريع من قبل لجنة التحكيم المتخصصة.</p>
+                    <p>تقييـم المشـاريع مـن قبـل
+                        لجنة التحكيم</p>
                 </div>
 
                 <!-- item 10 -->
                 <div class="timeline-card last">
                     <span class="date">20 مايو 2026</span>
-                    <h4>إعلان النتائج والفائزين</h4>
-                    <p>حفل الختام وتكريم الفرق الفائزة.</p>
+                    <h4>إعلان النتائج والفائزات</h4>
+                    <p>حفــل الختــام وإعــلان الفــرق
+                        الفائــزة ضمــن ملتقــى الابتــكار
+                        في معالجة اللغات الطبيعية</p>
                 </div>
 
             </div> <!-- .timeline-grid -->
@@ -1676,7 +1257,6 @@
         </div> <!-- .timeline-container -->
     </div>
 </section>
-
 
 <div class="container badge_section" style="margin-top: -80px">
     <h2>الأسئلة الشائعة</h2>
@@ -1814,7 +1394,6 @@
     </div>
 </section>
 
-
 <!-- قسم الهاشتاجات العلوية -->
 <section class="container hashtag-section">
     <div class="hashtag-container">
@@ -1858,8 +1437,6 @@
         </div>
     </div>
 </section>
-
-
 <!-- التذييل -->
 <footer>
     <div class="footer-bottom">
@@ -1880,16 +1457,6 @@
         } else {
             scrollToTop.classList.remove('show');
         }
-    });
-
-    // تأثيرات تفاعلية على البطاقات
-    document.querySelectorAll('.feature-card, .prize-card, .speaker-card, .step-box').forEach(card => {
-        card.addEventListener('mouseenter', function () {
-            this.style.transform = 'translateY(-5px)';
-        });
-        card.addEventListener('mouseleave', function () {
-            this.style.transform = 'translateY(0)';
-        });
     });
 
     // تأثير على زر التسجيل
