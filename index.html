@@ -11,9 +11,9 @@
 
     <style>
         :root {
-            --primary-color: #005d6a; /* الزيتي الغامق من الصورة */
+            --primary-color: #005367; /* الزيتي الغامق من الصورة */
             --accent-color: #45f5a1; /* الأخضر الفاتح للزر */
-            --light-bg: #bdf6dd; /* لون البطاقة السفلي */
+            --light-bg: #ccf5e5; /* لون البطاقة السفلي */
             --white: #ffffff;
         }
 
@@ -91,17 +91,17 @@
         }
 
         .hero-subtitle {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 5rem;
+            font-weight: 800;
             margin-bottom: 25px;
         }
 
         .hero-text {
-            font-size: 1.3rem;
-            max-width: 450px;
+            font-size: 25px;
+            max-width: 550px;
             margin: 0 auto 40px;
-            line-height: 1.8;
-            opacity: 0.9;
+            line-height: 1.6;
+            /* opacity: 0.9; */
         }
 
         .btn-register {
@@ -110,8 +110,8 @@
             border: none !important;
             padding: 12px 30px !important;
             border-radius: 50px !important;
-            font-weight: 800 !important;
-            font-size: 1rem !important;
+            font-weight: 700 !important;
+            font-size: 20px !important;
             transition: 0.3s !important;
             box-shadow: 0 4px 15px rgba(69, 245, 161, 0.4) !important;
         }
@@ -134,6 +134,8 @@
             display: block;
             font-size: 1.8rem;
             font-weight: 900;
+            color: #005860;
+            direction: rtl;
         }
 
         .stat-label {
@@ -401,7 +403,7 @@
         /* --- الأسئلة الشائعة --- */
         .accordion-button {
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 20px;
         }
 
         .accordion-button:not(.collapsed) {
@@ -638,6 +640,192 @@
             }
         }
     </style>
+    <style>
+        .conditions .condition_items {
+            padding: 50px 0 0 0 !important;
+        }
+
+        .conditions .condition_items h4 {
+            color: #007580;
+            margin-bottom: 20px;
+            position: relative
+        }
+
+        .conditions .condition_items h4::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #99ebcb;
+        }
+
+        .conditions .condition_items p {
+            color: #013f45;
+            font-size: 18px;
+            max-width: 80%;
+        }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* قسم الهاشتاجات العلوية */
+        .hashtag-section {
+            background-color: #e6e8f0;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 20px;
+        }
+
+        .hashtag-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 30px;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #005d6a;
+        }
+
+        .accordion-button {
+            font-size: 20px
+        }
+
+        /* قسم الجهات المنظمة */
+        .organizers-section {
+            background-color: #005367;
+            padding: 50px 0;
+            color: white;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .organizers-container {
+            margin: 0 auto;
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .organizers-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo-row {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 45%;
+        }
+
+        .logo-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        .faq {
+            padding-bottom: 40px !important
+        }
+
+        .university-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #005d6a;
+            margin-bottom: 10px;
+        }
+
+        .faculty-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #c0392b;
+        }
+
+        /* التصميم المتجاوب */
+        @media (max-width: 768px) {
+            .hashtag-container {
+                flex-direction: column;
+                gap: 15px;
+                font-size: 1.5rem;
+            }
+
+            .logo-row {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .logo {
+                max-width: 100%;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hashtag-container {
+                font-size: 1.3rem;
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .university-name {
+                font-size: 1.1rem;
+            }
+
+            .faculty-name {
+                font-size: 1rem;
+            }
+        }
+    </style>
 
     <style>
         .navbar-brand {
@@ -650,7 +838,8 @@
         }
 
         .navbar-nav .nav-link {
-            font-weight: 700
+            font-weight: 700;
+            font-size: 20px;
         }
 
         .about {
@@ -698,13 +887,80 @@
 
         .accordion-body {
             background-color: #80808021;
+            font-size: 18px;
         }
 
         .about h2 {
             color: #614e8f;
         }
+
         .about p {
             width: 75%;
+        }
+        .conditions {padding: 120px 0}
+
+
+        @media (max-width: 1200px) {
+            .about p {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .conditions {padding: 40px 0}
+
+        }
+        @media (max-width: 768px) {
+            .conditions .condition_items p {
+                max-width: 90%;
+            }
+        }
+        @media (max-width: 575px) {
+            .badge_section {
+                border-radius: 0px
+            }
+            .conditions {
+                padding: 20px !important;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .navbar-brand {
+                width: 180px;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 16px;
+            }
+
+            .hero-text {
+                font-size: 20px;
+            }
+
+            .btn-register {
+                padding: 10px 24px !important;
+                font-size: 15px !important;
+            }
+
+            .about p {
+                font-size: 16px !important;
+            }
+            .conditions .condition_items p {
+                font-size: 16px;}
+            .conditions {
+                padding: 20px 10px !important;
+            }
+            .badge_section {
+                padding: 20px 10px !important;}
+            .badge_section p{font-size: 16px !important;margin-bottom: 0px}
+            .accordion-button {
+                font-size: 14px !important;
+            }
+            .accordion-body {
+                font-size: 14px;
+            }
+            .hashtag-section {border-radius: 0px !important}
+            .footer-bottom p{font-size: 14px}
         }
 
     </style>
@@ -744,7 +1000,7 @@
             <p class="hero-text">
                 تمكين المبدعين من توظيف الذكاء الاصطناعي لبناء حلول عملية تعالج تحديات واقعية وتصنع أثراً مستداماً.
             </p>
-            <a href="#register" class="btn btn-register">سجلي الآن</a>
+            <a href="#register" class="btn btn-register">سجلي الأن</a>
         </div>
     </div>
 </header>
@@ -757,21 +1013,23 @@
             <div class="col-12 col-lg-9 order-2 order-lg-1">
                 <div class="row">
                     <div class="col-md-3 col-6 stat-item">
-                        <span class="stat-date">10 مارس</span>
-                        <span class="stat-label">فتح التسجيل</span>
-                    </div>
-                    <div class="col-md-3 col-6 stat-item">
-                        <span class="stat-date">20 أبريل</span>
-                        <span class="stat-label">انطلاق الهاكاثون</span>
+                        <span class="stat-date">20 مايو</span>
+                        <span class="stat-label">إعلان النتائج</span>
                     </div>
                     <div class="col-md-3 col-6 stat-item">
                         <span class="stat-date">71 يوم</span>
                         <span class="stat-label">المدة الزمنية</span>
                     </div>
                     <div class="col-md-3 col-6 stat-item">
-                        <span class="stat-date">20 مايو</span>
-                        <span class="stat-label">إعلان النتائج</span>
+                        <span class="stat-date">20 أبريل</span>
+                        <span class="stat-label">انطلاق الهاكاثون</span>
                     </div>
+                    <div class="col-md-3 col-6 stat-item">
+                        <span class="stat-date">10 مارس</span>
+                        <span class="stat-label">فتح التسجيل</span>
+                    </div>
+
+
                 </div>
             </div>
 
@@ -790,28 +1048,28 @@
             <p>كل ما تحتاجين معرفته عن ذكاء ثون</p>
         </div>
         <div class="row g-4 align-items-start">
-            <div class="col-md-6 col-lg-4 mb-5">
+            <div class="col-md-6 col-lg-4 mb-0 mb-lg-5">
                 <h4 class="fw-bold">الهدف :</h4>
                 <p>بنــاء حلــول ذكيــة باســتخدام الــذكاء الاصطناعـي لتحديـات واقعيـة وتحويـل الأفكار إلى نماذج قابلة
                     للتطبيق</p>
             </div>
-            <div class="col-md-6 col-lg-4 mb-5">
+            <div class="col-md-6 col-lg-4 mb-0 mb-lg-5">
                 <h4 class="fw-bold">المدة الزمنية :</h4>
                 <p>مـن 10 مـارس 2026 إلى 20 مايو 2026 (71 يوم)</p>
             </div>
-            <div class="col-md-6 col-lg-4 mb-5">
+            <div class="col-md-6 col-lg-4 mb-0 mb-lg-5">
                 <h4 class="fw-bold">الجهات المنظمة :</h4>
                 <p>مركـز الـذكاء الاصطناعـي بجامعـة الأمــيرة نــورة بنــت عبدالرحمــن بالتعاون مع شركة علم</p>
             </div>
-            <div class="col-md-6 col-lg-4 mb-5">
+            <div class="col-md-6 col-lg-4 mb-0 mb-lg-5">
                 <h4 class="fw-bold">الحضور :</h4>
                 <p>هجــين: حضــوري فــي جامعــة الأمــيرة نورة (قاعات المؤتمرات) + عن بعد</p>
             </div>
-            <div class="col-md-6 col-lg-4 mb-5">
+            <div class="col-md-6 col-lg-4 mb-0 mb-lg-5">
                 <h4 class="fw-bold">الفئة المستهدفة :</h4>
                 <p>طالبــات وخريجــات جامعــة الأمــيرة نــورة مــن جميــع التخصصات والكليات</p>
             </div>
-            <div class="col-md-6 col-lg-4 mb-5">
+            <div class="col-md-6 col-lg-4 mb-0 mb-lg-5">
                 <h4 class="fw-bold">المهارات المطلوبة :</h4>
                 <p>لا يشــترط خلفيــة تقنيــة - ســنوفر ورش عمــل تدريبيــة شــاملة فــي الابتكار والذكاء الاصطناعي</p>
             </div>
@@ -821,38 +1079,11 @@
 <div class="container badge_section">
     <h2>شروط المشاركة</h2>
 </div>
-<style>
-    .conditions .condition_items {
-        padding: 50px 0 0 0 !important;
-    }
 
-    .conditions .condition_items h4 {
-        color: #007580;
-        margin-bottom: 20px;
-        position: relative
-    }
-
-    .conditions .condition_items h4::before {
-        content: '';
-        position: absolute;
-        top: -60px;
-        right: 0;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: #00c37a6e;
-    }
-
-    .conditions .condition_items p {
-        color: #013f45;
-        font-size: 18px;
-        max-width: 80%;
-    }
-</style>
 <section class="conditions">
     <div class="container">
-        <div class="row g-4 align-items-start" style="padding: 50px 0">
-            <div class="col-md-6 col-lg-4 mb-5 condition_items">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-6 col-lg-4 mb-0 mb-md-5 condition_items">
                 <h4 class="fw-bold">تكوين الفريق المتوازن :</h4>
                 <p>كل فريــق يجــب أن يحتــوي عــلى
                     شــخص تقــني واحــد عــلى الأقــل مــن
@@ -860,7 +1091,7 @@
                     البرمجيــات. هــذا يضمــن القــدرة عــلى
                     تنفيذ الأفكار تقنيا</p>
             </div>
-            <div class="col-md-6 col-lg-4 mb-5 condition_items">
+            <div class="col-md-6 col-lg-4 mb-md-5 condition_items">
                 <h4 class="fw-bold">التنوع في التخصصات :</h4>
                 <p>يمنــع تســجيل فريــق كامــل
                     تقــني! نشــجع التنــوع فــي
@@ -868,7 +1099,7 @@
                     ويضمــن حلــول شــاملة تراعــي
                     جميع الجوانب.</p>
             </div>
-            <div class="col-md-6 col-lg-4 mb-5 condition_items">
+            <div class="col-md-6 col-lg-4 mb-md-5 condition_items">
                 <h4 class="fw-bold">عدد أعضاء الفريق :</h4>
                 <p>يتكــون الفريــق مــن 2-5
                     مشــاركات. يمكنــك التســجيل
@@ -882,9 +1113,9 @@
 
 <div class="container badge_section" style="margin-top: 0;margin-bottom: -80px">
     <h2>الجدول الزمـنـي</h2>
-    <p style="      color: #c0ffe6 !important;
+    <p style="color: #99ebcb !important;
     font-weight: 400;
-    font-size: 20px;">جميع المراحل والمواعيد المهمة</p>
+    font-size: 22px;">جميع المراحل والمواعيد المهمة</p>
 </div>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
@@ -896,7 +1127,7 @@
     :root {
         --bg: #efeff8;
         --hero-green: #0b6f74;
-        --accent: #00c37a;
+        --accent: #14ce7c;
         --path: #6f73b8;
         --card: #ffffff;
         --muted: #5b6b7a;
@@ -1035,17 +1266,16 @@
         }
 
         /* show a right-line and small circle before each card for mobile vertical timeline feel */
-        .timeline-card::before {
-            content: '';
-            position: absolute;
-            right: -10px;
-            top: 24px;
-            width: 12px;
-            height: 12px;
-            background: var(--path);
-            border-radius: 50%;
-        }
-
+        /*.timeline-card::before {*/
+        /*    content: '';*/
+        /*    position: absolute;*/
+        /*    right: -10px;*/
+        /*    top: 24px;*/
+        /*    width: 12px;*/
+        /*    height: 12px;*/
+        /*    background: var(--path);*/
+        /*    border-radius: 50%;*/
+        /*}*/
         .timeline-container {
             padding-top: 20px;
         }
@@ -1131,30 +1361,36 @@
         }
 
         .dot-10 {
-             top: auto;
+            top: auto;
             right: 265px;
             bottom: 55px;
         }
     }
-@media (max-width: 1400px) {
-    .dot-10 {
-        right: 225px;
+
+    @media (max-width: 1400px) {
+        .dot-10 {
+            right: 225px;
+        }
     }
-}
+
     @media (max-width: 1200px) {
-    .dot-10 {
-        right: 190px;
-    }
+        .dot-10 {
+            right: 190px;
+        }
+
         .timetable .timeline-grid {
             margin-top: -46px;
         }
+
         .timeline-grid {
             gap: 69px 26px;
         }
+
         .timeline-card h4 {
             padding-top: 6px;
         }
-}
+    }
+
     /* small visual polish */
 
 
@@ -1167,10 +1403,14 @@
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         z-index: 20 !important;
     }
+
     .timeline-card {
         /*background-color: var(--light-bg);*/
     }
-    .timetable .timeline-grid{margin-top: -50px}
+
+    .timetable .timeline-grid {
+        margin-top: -50px
+    }
 
 </style>
 
@@ -1525,9 +1765,9 @@
 
 <div class="container badge_section" style="margin-top: -80px">
     <h2>الأسئلة الشائعة</h2>
-    <p style="    color: #c0ffe6 !important;
-    font-weight: 200;
-    font-size: 18px;">إجاباتٌ للأسئلة الأكثر تكرارًا</p>
+    <p style="   color: #99ebcb !important;
+    font-weight: 400;
+    font-size: 22px;">إجاباتٌ للأسئلة الأكثر تكرارًا</p>
 </div>
 
 <section id="faq" class="faq container" style="padding-top: 30px">
@@ -1541,7 +1781,7 @@
             <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">ا، الهاكاثــون مفتــوح لجميــع طالبــات وخريجــات جامعــة الأمــيرة نــورة
                     مــن جميــع التخصصــات. لكــن كل
-                    فريق يجب أن يحتوي على شخص تقني واحد على الأقل
+                    فريق يجب <br>أن يحتوي على شخص تقني واحد على الأقل
                 </div>
             </div>
         </div>
@@ -1659,160 +1899,6 @@
     </div>
 </section>
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Cairo', sans-serif;
-        background-color: #f8f9fa;
-        color: #333;
-    }
-
-    /* قسم الهاشتاجات العلوية */
-    .hashtag-section {
-        background-color: #e6e8f0;
-        padding: 40px 0;
-        text-align: center;
-        margin-bottom: 30px;
-        border-radius: 20px;
-    }
-
-    .hashtag-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-evenly;
-        gap: 30px;
-        font-size: 2rem;
-        font-weight: 700;
-        color: #005d6a;
-    }
-
-    /* قسم الجهات المنظمة */
-    .organizers-section {
-        background-color: #005d6a;
-        padding: 50px 0;
-        color: white;
-    }
-
-    .section-title {
-        font-size: 2.2rem;
-        font-weight: 700;
-        margin-bottom: 40px;
-        color: white;
-    }
-
-    .organizers-container {
-        margin: 0 auto;
-        background: white;
-        border-radius: 25px;
-        padding: 30px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        position: relative;
-    }
-
-    .organizers-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .logo-row {
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 45%;
-    }
-
-    .logo-image {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 15px;
-    }
-
-    .logo-text {
-        font-size: 1.1rem;
-        color: #555;
-        line-height: 1.5;
-        font-weight: 600;
-    }
-
-    .faq {
-        padding-bottom: 40px !important
-    }
-
-    .university-name {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #005d6a;
-        margin-bottom: 10px;
-    }
-
-    .faculty-name {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #c0392b;
-    }
-
-    /* التصميم المتجاوب */
-    @media (max-width: 768px) {
-        .hashtag-container {
-            flex-direction: column;
-            gap: 15px;
-            font-size: 1.5rem;
-        }
-
-        .logo-row {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .logo {
-            max-width: 100%;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .hashtag-container {
-            font-size: 1.3rem;
-            gap: 10px;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-        }
-
-        .logo-text {
-            font-size: 1rem;
-        }
-
-        .university-name {
-            font-size: 1.1rem;
-        }
-
-        .faculty-name {
-            font-size: 1rem;
-        }
-    }
-</style>
 
 <!-- قسم الهاشتاجات العلوية -->
 <section class="container hashtag-section">
