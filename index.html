@@ -1299,83 +1299,36 @@
             font-size: 1.15rem;
         }
     }
+    .dot-1 {
+        top: 28px;
+        right: 200px;
+    }
 
+    .dot-10 {
+        top: auto;
+        right: 200px;
+        bottom: 55px;
+    }
     /* ========== positions for dots to visually align with svg path on lg >=992px ==========
        We place the dots absolute inside .timeline-container.
        You can tweak top/right percentages to match exact design.
     ========== */
-    @media (min-width: 992px) {
-        /* ensure container has enough height for svg curve */
-        .timeline-container {
-            height: 720px;
-        }
-
-        .space_stat_item {
-            display: none !important;
-        }
-
-        /* place 10 dots; their values tuned to match a 3-row curved path */
-        .dot-1 {
-            top: 28px;
-            right: 55px;
-        }
-
-        .dot-2 {
-            top: 70px;
-            right: 320px;
-        }
-
-        .dot-3 {
-            top: 70px;
-            right: 600px;
-        }
-
-        .dot-4 {
-            top: 230px;
-            right: 600px;
-        }
-
-        .dot-5 {
-            top: 230px;
-            right: 330px;
-        }
-
-        .dot-6 {
-            top: 230px;
-            right: 60px;
-        }
-
-        .dot-7 {
-            top: 390px;
-            right: 60px;
-        }
-
-        .dot-8 {
-            top: 390px;
-            right: 330px;
-        }
-
-        .dot-9 {
-            top: 390px;
-            right: 600px;
-        }
-
-        .dot-10 {
-            top: auto;
-            right: 265px;
-            bottom: 55px;
-        }
-    }
-
     @media (max-width: 1400px) {
+        .dot-1 {
+            right: 180px;
+        }
+
         .dot-10 {
-            right: 225px;
+            right: 180px;
         }
     }
-
     @media (max-width: 1200px) {
+        .dot-1 {
+            right: 150px;
+        }
+
         .dot-10 {
-            right: 190px;
+            right: 150px;
         }
 
         .timetable .timeline-grid {
@@ -1390,6 +1343,18 @@
             padding-top: 6px;
         }
     }
+
+    @media (min-width: 992px) {
+        .timeline-container {
+            height: 720px;
+        }
+
+        .space_stat_item {
+            display: none !important;
+        }
+    }
+
+
 
     /* small visual polish */
 
@@ -1421,7 +1386,37 @@
         <div class="timeline-container">
 
             <!-- SVG decorative path (hidden on small screens via CSS) -->
-            <svg
+<!--            <svg-->
+<!--                    class="timeline-svg style2"-->
+<!--                    viewBox="0 0 1200 3700"-->
+<!--                    preserveAspectRatio="none"-->
+<!--                    xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--                <path-->
+<!--                        fill="none"-->
+<!--                        stroke="currentColor"-->
+<!--                        stroke-width="4"-->
+<!--                        d="-->
+
+<!--      M 1010 100-->
+<!--      H 110-->
+<!--      C -40 100, -40 700, 110 700-->
+<!--      H 1070-->
+<!--      C 1240 700, 1240 1300, 1070 1300-->
+<!--      H 110-->
+<!--      C -40 1300, -40 1900, 110 1900-->
+<!--      H 1070-->
+<!--      C 1240 1900, 1240 2500, 1070 2500-->
+<!--      H 110-->
+<!--      C -40 2500, -40 3100, 110 3100-->
+<!--      H 1070-->
+
+<!--&lt;!&ndash;    "&ndash;&gt;            </svg>-->
+
+            <!--                />-->
+<!--            </svg>-->
+
+                <svg
                     class="timeline-svg"
                     viewBox="0 0 1200 2600"
                     preserveAspectRatio="none"
@@ -1432,18 +1427,22 @@
                         stroke="currentColor"
                         stroke-width="4"
                         d="
-      M 1140 100
+      M 1010 100
       H 110
-      C 40 100, 40 850, 110 850
+      C -20 100, -20 850, 110 850
       H 1070
-      C 1140 850, 1140 1625, 1070 1625
+      C 1240 850, 1240 1625, 1070 1625
       H 110
-      C 40 1600, 40 2350, 110 2350
-      H 950
+      C -20 1600, -20 2350, 110 2350
+      H 1010
     "
                 />
             </svg>
 
+
+<!--            <style>-->
+<!--                .timeline-card.last{margin-right: 55px}-->
+<!--            </style>-->
 
             <!-- decorative dots (positioned absolute above) -->
             <span class="timeline-dot dot-1"></span>
@@ -1516,7 +1515,7 @@
                 </div>
 
                 <!-- item 10 -->
-                <div class="timeline-card">
+                <div class="timeline-card last">
                     <span class="date">20 مايو 2026</span>
                     <h4>إعلان النتائج والفائزين</h4>
                     <p>حفل الختام وتكريم الفرق الفائزة.</p>
